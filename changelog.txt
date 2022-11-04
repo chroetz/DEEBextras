@@ -1,0 +1,32 @@
+2022-11-04
+* evaluation via `Rscript -e 'DEEBeval::interact()'`
+
+2022-11-01
+* Publication of DEEB-DB_2022-11-01
+* reduced required prediction time for lorenz63std from [100,150] to [100,120]
+* removed method "Trivial"
+* added interpolation methods (PwLin-Nn, Spline-IpGp, Spline-Nn, Spline-Poly2) for all models and Spline-True for polynomial models
+* added further statistics (quartiles, min, max) to tables for aggregated scores
+* added navi.html to navigate the evaluation pages more easily
+* the example folders now also have a full set of estimations and evaluations
+
+2022-10-14
+* Publication of DEEB-DB_2022-10-14
+* For polyDeg2Dim2multi observations with truth number 10 and above have changed. All other observation stayed the same.
+* Every model (including those with multiple trajectories) now has a full set of estimations from the estimators Const, Trivial, and Truth
+* The evaluation has been improved and applied to all models and estimators. See <model>/evaluation/eval_scores.html and <model>/evaluation/showPlots.html
+* The plots are created in a more systematic way and directly realted to the tasks
+* The truth data is now split into several files: 
+	- obs_truth<NNNN>.csv for the noiseless observation values
+	- task<NN>truth<NNNN>.csv for true solutions of each task
+
+2022-10-06
+* Corrections to DEEB-DB_2022-10-05
+	- polyDeg2Dim2multi task Nr 03: number of dimensions 3 -> 2
+	- DEEBdescription.html: corrected description of time step for prediction
+
+2022-10-05
+* Publication of DEEB-DB_2022-10-05
+
+2022-09-27
+* Publication of preliminaryDB
