@@ -26,7 +26,7 @@ for (model in models) {
     paths$obs,
     c("truth", "obs"),
     nrFilters = list(obsNr = obsNrFilter, truthNr = truthNrFilter))
-  meta <- dplyr::left_join(obsMeta, truthMeta, by = "truthNr")
+  meta <- dplyr::left_join(obsMeta, truthMeta, by = "truthNr", multiple = "all")
   outPath <- file.path(paths$esti, "Truth")
   dir.create(outPath, showWarnings=FALSE, recursive=TRUE)
   for (i in seq_len(nrow(meta))) {
