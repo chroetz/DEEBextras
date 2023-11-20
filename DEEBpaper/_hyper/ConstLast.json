@@ -1,0 +1,19 @@
+{
+    "_class": ["Trajs", "HyperParms", "Opts"],
+    "name": "ConstLast",
+    "normalize": "none",
+    "initialState": {
+      "_class": ["FromTrajs", "InitialState", "Opts"]
+    },
+    "fitTrajs": {
+      "_class": ["ConstLast", "FitTrajs", "Opts"]
+    },
+    "derivMethod": "none",
+    "derivFun": {
+        "_class": ["Null", "DerivFun", "Opts"]
+    },
+    "odeSolver": {
+        "_class": ["OdeSolver", "Opts"],
+        "timeStep": 0.1
+    }
+}

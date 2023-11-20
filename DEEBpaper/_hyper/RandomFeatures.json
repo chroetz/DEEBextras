@@ -1,0 +1,31 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "RandomFeatures",
+  "list": [
+    {
+      "_class": ["Esn", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "size": 400,
+      "degree": 0,
+      "spectralRadius": 0,
+      "inWeightScale": {
+        "_class": "expansion",
+        "values": [0.1, 0.2, 0.4]
+      },
+      "l2Penalty": {
+        "_class": "expansion",
+        "values": [1e-10, 1e-9, 1e-8, 1e-7]
+      },
+      "bias": 1,
+      "warmUpLen": 1,
+      "initReservoirScale": 1,
+      "seed": {
+        "_class": "expansion",
+        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      }
+    }
+  ]
+}
