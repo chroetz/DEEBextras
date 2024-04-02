@@ -24,10 +24,9 @@
       },
       "bias": 1,
       "warmUpLen": 1,
-      "initReservoirScale": 1
+      "initReservoirScale": 1,
+      "skip": 0,
+      "derivOrder": 1
     }
-  ],
-  "_timeStamp": "Sun Apr 16 23:09:21 2023",
-  "_packageNames": ["base", ".GlobalEnv", "ConfigOpts"],
-  "_packageVersions": ["4.2.3", "", "0.0.0.9011"]
+  ]
 }

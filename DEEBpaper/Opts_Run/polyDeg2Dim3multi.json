@@ -1,0 +1,198 @@
+{
+  "_class": ["Run", "Opts"],
+  "name": "polyDeg2Dim3multi",
+  "path": "~/DEEBpaper10",
+  "truth": {
+    "_class": ["Truth", "Opts"],
+    "reps": 10,
+    "nTrajectories": 50,
+    "timeRange": [0, 20],
+    "odeSolver": {
+      "_class": ["OdeSolver", "Opts"],
+      "timeStep": 0.01,
+      "method": "rk4",
+      "additionalArgs": []
+    },
+    "deFunSampler": {
+      "_class": ["polynomial", "Function", "Sampler", "Opts"],
+      "d": 3,
+      "polyDeg": 2,
+      "maxNorm": 10,
+      "coefSampler": {
+        "_class": ["uniform", "Array", "Sampler", "Opts"],
+        "range": [-0.5, 0.5],
+        "sparsity": 5,
+        "keepFirstColumn": false
+      },
+      "postprocessors": {
+        "_class": ["Postprocessor", "List", "Opts"],
+        "list": []
+      }
+    },
+    "u0Sampler": {
+      "_class": ["uniformOnBall", "Array", "Sampler", "Opts"],
+      "range": [0, 5],
+      "sparsity": 0,
+      "keepFirstColumn": false
+    },
+    "conditions": {
+      "_class": ["Condition", "List", "Opts"],
+      "list": [
+        {
+          "_class": ["bounded", "Condition", "Opts"],
+          "maxNorm": 10
+        }
+      ]
+    },
+    "seed": 1272348547,
+    "path": "truth",
+    "maxRejectionsU0": 1,
+    "maxRejectionsFun": 1000
+  },
+  "observation": {
+    "_class": ["Observation", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "fxd_noiseless",
+        "n": 20,
+        "timeStep": 1,
+        "random": false,
+        "noiseSampler": {
+          "_class": ["const", "Array", "Sampler", "Opts"],
+          "value": 0,
+          "sparsity": 0,
+          "keepFirstColumn": false
+        },
+        "seed": 2074974332,
+        "timeLimit": 1e+100,
+        "noiseFree": 0
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "fxd_noisy",
+        "n": 20,
+        "timeStep": 1,
+        "random": false,
+        "noiseSampler": {
+          "_class": ["normal", "Array", "Sampler", "Opts"],
+          "sd": 0.5,
+          "sparsity": 0,
+          "keepFirstColumn": false,
+          "mean": 0
+        },
+        "seed": 740125490,
+        "timeLimit": 1e+100,
+        "noiseFree": 0
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "rnd_noiseless",
+        "n": 1000,
+        "timeLimit": 20,
+        "timeStep": 1,
+        "random": true,
+        "noiseSampler": {
+          "_class": ["const", "Array", "Sampler", "Opts"],
+          "value": 0,
+          "sparsity": 0,
+          "keepFirstColumn": false
+        },
+        "seed": 1694780475,
+        "noiseFree": 0
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "rnd_noisy",
+        "n": 1000,
+        "timeLimit": 20,
+        "timeStep": 1,
+        "random": true,
+        "noiseSampler": {
+          "_class": ["normal", "Array", "Sampler", "Opts"],
+          "sd": 0.5,
+          "sparsity": 0,
+          "keepFirstColumn": false,
+          "mean": 0
+        },
+        "seed": 606074755,
+        "noiseFree": 0
+      }
+    ],
+    "truthPath": "truth",
+    "path": "observation"
+  },
+  "taskList": {
+    "_class": ["Task", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["estiObsTrajs", "Task", "Opts"],
+        "name": "observation time",
+        "predictionTime": [0, 20],
+        "timeStep": 1,
+        "scoreList": {
+          "_class": ["Score", "List", "Opts"],
+          "list": [
+            {
+              "_class": ["Distance", "TimeState", "Score", "Opts"],
+              "name": "L2",
+              "method": "L2",
+              "optimalValue": 0,
+              "methodArgs": []
+            },
+            {
+              "_class": ["Distance", "TimeState", "Score", "Opts"],
+              "name": "L1",
+              "method": "L1",
+              "optimalValue": 0,
+              "methodArgs": []
+            }
+          ]
+        }
+      },
+      {
+        "_class": ["velocity", "Task", "Opts"],
+        "name": "velocity",
+        "gridRanges": [
+          [-3, 3],
+          [-3, 3],
+          [-3, 3]
+        ],
+        "gridSteps": [0.5, 0.5, 0.5],
+        "scoreList": {
+          "_class": ["Score", "List", "Opts"],
+          "list": [
+            {
+              "_class": ["Distance", "VelocityField", "Score", "Opts"],
+              "name": "L2",
+              "method": "L2",
+              "optimalValue": 0,
+              "methodArgs": []
+            },
+            {
+              "_class": ["Distance", "VelocityField", "Score", "Opts"],
+              "name": "L1",
+              "method": "L1",
+              "optimalValue": 0,
+              "methodArgs": []
+            }
+          ]
+        }
+      }
+    ],
+    "path": "task"
+  },
+  "plot": {
+    "_class": ["Plot", "Opts"],
+    "obsNr": 0,
+    "path": "evaluation",
+    "truthOptsPath": ".",
+    "truthPath": "truth",
+    "obsPath": "observation",
+    "taskPath": "task",
+    "outFileName": "Plots_TruthObs"
+  },
+  "_timeStamp": "Thu Nov  9 17:36:01 2023",
+  "_packageNames": ["DEEBdata", "ConfigOpts"],
+  "_packageVersions": ["0.0.2", "0.0.0.9011"]
+}

@@ -1,0 +1,175 @@
+{
+  "_class": ["Run", "Opts"],
+  "name": "lorenzNonparam",
+  "path": "~/DEEBpaper10",
+  "truth": {
+    "_class": ["Truth", "Opts"],
+    "reps": 10,
+    "timeRange": [0, 120],
+    "odeSolver": {
+      "_class": ["OdeSolver", "Opts"],
+      "timeStep": 0.001,
+      "method": "rk4",
+      "additionalArgs": []
+    },
+    "deFunSampler": {
+      "_class": ["lorenzNonparam", "Function", "Sampler", "Opts"],
+      "d": 3,
+      "postprocessors": {
+        "_class": ["Postprocessor", "List", "Opts"],
+        "list": []
+      },
+      "maxTries": 100,
+      "odeSteps": 1000,
+      "maxTime": 50,
+      "u0": [-0.32, -0.6, 8],
+      "minVariation": 1,
+      "warmUpRatio": 0.9,
+      "nSupportPoints": 5,
+      "gpInOffset": [50, 50, 25],
+      "gpInScale": 0.01,
+      "gpOutOffset": [10, 50, 4],
+      "gpOutScale": [5, 30, 2],
+      "gpBandwidth": 1
+    },
+    "u0Sampler": {
+      "_class": ["lorenz63", "Array", "Sampler", "Opts"],
+      "sparsity": 0,
+      "keepFirstColumn": false
+    },
+    "conditions": {
+      "_class": ["Condition", "List", "Opts"],
+      "list": [
+        {
+          "_class": ["stopped", "Condition", "Opts"],
+          "threshold": 0.1
+        },
+        {
+          "_class": ["periodic", "Condition", "Opts"],
+          "threshold": 100,
+          "kthLargest": 10
+        }
+      ]
+    },
+    "seed": 325596330,
+    "path": "truth",
+    "maxRejectionsU0": 1,
+    "maxRejectionsFun": 1000,
+    "nTrajectories": 1
+  },
+  "observation": {
+    "_class": ["Observation", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "fxd_noiseless",
+        "n": 10000,
+        "timeStep": 0.01,
+        "noiseFree": [1, -1],
+        "random": false,
+        "noiseSampler": {
+          "_class": ["const", "Array", "Sampler", "Opts"],
+          "value": 0,
+          "sparsity": 0,
+          "keepFirstColumn": false
+        },
+        "seed": 1121225076,
+        "timeLimit": 1e+100
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "fxd_noisy",
+        "n": 10000,
+        "timeStep": 0.01,
+        "noiseFree": [1, -1],
+        "random": false,
+        "noiseSampler": {
+          "_class": ["normal", "Array", "Sampler", "Opts"],
+          "sd": 0.1,
+          "sparsity": 0,
+          "keepFirstColumn": false,
+          "mean": 0
+        },
+        "seed": 247331315,
+        "timeLimit": 1e+100
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "rnd_noiseless",
+        "n": 11000,
+        "timeLimit": 100,
+        "timeStep": 0.01,
+        "noiseFree": [1, -1],
+        "random": true,
+        "noiseSampler": {
+          "_class": ["const", "Array", "Sampler", "Opts"],
+          "value": 0,
+          "sparsity": 0,
+          "keepFirstColumn": false
+        },
+        "seed": 2093109847
+      },
+      {
+        "_class": ["Observation", "Opts"],
+        "name": "rnd_noisy",
+        "n": 11000,
+        "timeLimit": 100,
+        "timeStep": 0.01,
+        "noiseFree": [1, -1],
+        "random": true,
+        "noiseSampler": {
+          "_class": ["normal", "Array", "Sampler", "Opts"],
+          "sd": 0.1,
+          "sparsity": 0,
+          "keepFirstColumn": false,
+          "mean": 0
+        },
+        "seed": 250946163
+      }
+    ],
+    "truthPath": "truth",
+    "path": "observation"
+  },
+  "taskList": {
+    "_class": ["Task", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["estiObsTrajs", "Task", "Opts"],
+        "name": "future",
+        "predictionTime": [100, 120],
+        "timeStep": 0.02,
+        "scoreList": {
+          "_class": ["Score", "List", "Opts"],
+          "list": [
+            {
+              "_class": ["FollowTime", "TimeState", "Score", "Opts"],
+              "name": "FollowTime",
+              "timeScale": 1,
+              "radius": 0.5
+            },
+            {
+              "_class": ["ValidTime", "TimeState", "Score", "Opts"],
+              "name": "ValidTime",
+              "threshold": 0.4,
+              "nomalization": "scale"
+            }
+          ]
+        }
+      }
+    ],
+    "path": "task"
+  },
+  "plot": {
+    "_class": ["Plot", "Opts"],
+    "obsNr": 0,
+    "path": "evaluation",
+    "truthOptsPath": ".",
+    "truthPath": "truth",
+    "obsPath": "observation",
+    "taskPath": "task",
+    "outFileName": "Plots_TruthObs"
+  },
+  "_timeStamp": "Thu Nov  9 17:29:47 2023",
+  "_packageNames": ["DEEBdata", "ConfigOpts"],
+  "_packageVersions": ["0.0.2", "0.0.0.9011"]
+}

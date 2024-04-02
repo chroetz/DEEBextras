@@ -1,0 +1,10 @@
+{
+  "_class": ["Direct", "HyperParms", "Opts"],
+  "name": "Analogue",
+  "normalize": "none",
+  "initialState": {
+    "_class": ["FromObs", "InitialState", "Opts"]
+  },
+  "requiredFutures": 1,
+  "derivOrder": 1
+}
