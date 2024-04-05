@@ -10,6 +10,17 @@ runAll(
 )
 
 run(
+  "~/DEEBextras/DEEBpaper/SimulationOpts/lorenz63std.json",
+  overwriteList=list(
+    truth = list(reps = 10),
+    path = "~/DEEBpaper10"))
+
+run(
+  "~/DEEBextras/DEEBpaper/SimulationOpts/lorenz63std.json",
+  overwriteList=list(
+    truth = list(reps = 100),
+    path = "~/DEEBpaper100"))
+run(
   "~/DEEBextras/DEEBpaper/SimulationOpts/lorenz63random.json",
   overwriteList=list(
     truth = list(reps = 100),

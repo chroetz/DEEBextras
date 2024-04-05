@@ -5,6 +5,20 @@
   "initialState": {
     "_class": ["FromObs", "InitialState", "Opts"]
   },
-  "requiredFutures": 1,
-  "derivOrder": 1
+  "requiredFutures": {
+    "_class": "expansion",
+    "values": {
+      "A0": 1,
+      "A1": 2,
+      "A2": 3
+    }
+  },
+  "derivOrder": {
+    "_class": "expansion",
+    "values": {
+      "A0": 1,
+      "A1": 2,
+      "A2": 3
+    }
+  }
 }
