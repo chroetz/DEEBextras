@@ -1,6 +1,6 @@
 {
   "_class": ["HyperParms", "List", "Opts"],
-  "name": "Spline-Gp",
+  "name": "",
   "list": [
     {
       "_class": ["Trajs", "HyperParms", "Opts"],
@@ -19,11 +19,23 @@
         "neighbors": 50,
         "bandwidth": {
           "_class": "expansion",
-          "values": [0.5, 1, 2]
+          "values": [0.5, 1, 2],
+          "generate": {
+            "kind": "multiply",
+            "value": 2,
+            "max": 100,
+            "min": 1e-7
+          }
         },
         "regulation": {
           "_class": "expansion",
-          "values": [1e-8, 1e-7, 1e-6, 1e-5, 1e-4]
+          "values": [1e-8, 1e-7, 1e-6, 1e-5, 1e-4],
+          "generate": {
+            "kind": "multiply",
+            "value": 10,
+            "max": 100,
+            "min": 1e-15
+          }
         },
         "modifierList": {
           "_class": ["Modifier", "List", "Opts"],

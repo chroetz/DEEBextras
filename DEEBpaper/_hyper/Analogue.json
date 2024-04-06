@@ -1,24 +1,29 @@
 {
-  "_class": ["Direct", "HyperParms", "Opts"],
-  "name": "Analogue",
-  "normalize": "none",
-  "initialState": {
-    "_class": ["FromObs", "InitialState", "Opts"]
-  },
-  "requiredFutures": {
-    "_class": "expansion",
-    "values": {
-      "A0": 1,
-      "A1": 2,
-      "A2": 3
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Direct", "HyperParms", "Opts"],
+      "normalize": "none",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "requiredFutures": {
+        "_class": "expansion",
+        "values": {
+          "A0": 1,
+          "A1": 2,
+          "A2": 3
+        }
+      },
+      "derivOrder": {
+        "_class": "expansion",
+        "values": {
+          "A0": 1,
+          "A1": 2,
+          "A2": 3
+        }
+      }
     }
-  },
-  "derivOrder": {
-    "_class": "expansion",
-    "values": {
-      "A0": 1,
-      "A1": 2,
-      "A2": 3
-    }
-  }
+  ]
 }

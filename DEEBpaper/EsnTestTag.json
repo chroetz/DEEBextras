@@ -1,0 +1,35 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "Esn",
+  "list": [
+    {
+      "_class": ["Esn", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "size": 400,
+      "degree": 6,
+      "spectralRadius": {
+        "_class": "expansion",
+        "values": {
+            "A0": 0.1,
+            "A1": 0.2
+        }
+      },
+      "inWeightScale": {
+        "_class": "expansion",
+        "values": {
+            "A0,A1": 0.1,
+            "A1": 0.2
+        }
+      },
+      "l2Penalty": 1e-8,
+      "bias": 1,
+      "warmUpLen": 1,
+      "initReservoirScale": 1,
+      "skip": 0,
+      "derivOrder": 1
+    }
+  ]
+}

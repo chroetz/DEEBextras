@@ -1,6 +1,6 @@
 {
   "_class": ["Trajs", "HyperParms", "Opts"],
-  "name": "Spline-Poly2",
+  "name": "",
   "normalize": "meanAndCov",
   "initialState": {
     "_class": ["FromObs", "InitialState", "Opts"]

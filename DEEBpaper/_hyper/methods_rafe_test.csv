@@ -1,0 +1,5 @@
+model,method,obs,timeInMinutes
+lorenz63std,RandomFeatures_fxd_interp,fxd_noiseless,2
+lorenz63std,RandomFeatures_fxd_noisy,fxd_noisy,2
+lorenz63std,RandomFeatures_rnd_interp,rnd_noiseless,2
+lorenz63std,RandomFeatures_rnd_noisy,rnd_noisy,2

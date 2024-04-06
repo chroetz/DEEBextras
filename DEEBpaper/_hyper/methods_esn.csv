@@ -1,0 +1,9 @@
+model,method,obs
+.,Esn_fxd_interp,fxd_noiseless
+.,Esn_fxd_noisy,fxd_noisy
+.,Esn_rnd_interp,rnd_noiseless
+.,Esn_rnd_noisy,rnd_noisy
+.,RandomFeatures_fxd_interp,fxd_noiseless
+.,RandomFeatures_fxd_noisy,fxd_noisy
+.,RandomFeatures_rnd_interp,rnd_noiseless
+.,RandomFeatures_rnd_noisy,rnd_noisy

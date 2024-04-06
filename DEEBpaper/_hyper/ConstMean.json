@@ -1,6 +1,6 @@
 {
   "_class": ["Trajs", "HyperParms", "Opts"],
-  "name": "ConstMean",
+  "name": "",
   "normalize": "none",
   "initialState": {
     "_class": ["FromTrajs", "InitialState", "Opts"]

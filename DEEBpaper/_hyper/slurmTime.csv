@@ -1,0 +1,9 @@
+method,timeInMinutes
+Esn_fxd_interp,2
+Esn_fxd_noisy,2
+Esn_rnd_interp,2
+Esn_rnd_noisy,2
+ConstLast,1
+ConstMean,1
+Analogue,10
+

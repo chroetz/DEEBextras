@@ -1,6 +1,6 @@
 {
   "_class": ["Trajs", "HyperParms", "Opts"],
-  "name": "PwLin-Nn",
+  "name": "",
   "normalize": "meanAndCov",
   "initialState": {
     "_class": ["FromObs", "InitialState", "Opts"]

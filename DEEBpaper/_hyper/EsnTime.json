@@ -1,0 +1,33 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "EsnTime",
+  "list": [
+    {
+      "_class": ["Esn", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "size": 400,
+      "degree": 6,
+      "spectralRadius": {
+        "_class": "expansion",
+        "values": [0.025, 0.05, 0.1, 0.2]
+      },
+      "inWeightScale": {
+        "_class": "expansion",
+        "values": [0.05, 0.1, 0.2]
+      },
+      "l2Penalty": {
+        "_class": "expansion",
+        "values": [1e-09, 1e-08, 1e-07, 1e-06, 1e-05]
+      },
+      "bias": 1,
+      "warmUpLen": 1,
+      "initReservoirScale": 1,
+      "skip": 0,
+      "derivOrder": 1,
+      "timeStepAsInput": true
+    }
+  ]
+}

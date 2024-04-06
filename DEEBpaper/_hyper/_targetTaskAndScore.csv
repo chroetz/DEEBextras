@@ -1,0 +1,6 @@
+model,taskNr,scoreName,target
+gaussianProcessDim3multi,2,L2,min
+lorenz63random,1,FollowTime,max
+lorenz63std,1,FollowTime,max
+lorenzNonparam,1,FollowTime,max
+polyDeg2Dim3multi,2,L2,min
