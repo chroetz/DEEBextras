@@ -1,0 +1,35 @@
+{
+  "_class": ["estiObsTrajs", "Task", "Opts"],
+  "name": "future",
+  "predictionTime": [100, 110],
+  "timeStep": 0.02,
+  "scoreList": {
+    "_class": ["Score", "List", "Opts"],
+    "list": [
+      {
+        "_class": ["FollowTime", "TimeState", "Score", "Opts"],
+        "name": "FollowTime",
+        "timeScale": 1,
+        "radius": 0.5
+      },
+      {
+        "_class": ["ValidTime", "TimeState", "Score", "Opts"],
+        "name": "ValidTime",
+        "threshold": 0.4,
+        "nomalization": "scale"
+      },
+      {
+        "_class": ["Distance", "TimeState", "Score", "Opts"],
+        "name": "sMAPE",
+        "method": "L1",
+        "optimalValue": 0,
+        "methodArgs": [],
+        "normalize": "norm",
+        "factor": 100
+      }
+    ]
+  },
+  "_timeStamp": "Tue Apr  2 16:03:50 2024",
+  "_packageNames": ["DEEBdata", "ConfigOpts"],
+  "_packageVersions": ["0.0.2", "0.0.0.9012"]
+}

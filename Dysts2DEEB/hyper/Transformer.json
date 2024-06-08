@@ -1,0 +1,90 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Transformer", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "contextLen": {
+        "_class": "expansion",
+        "values": [16,64],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 2
+        }
+      },
+      "posDim": {
+        "_class": "expansion",
+        "values": [8, 32],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 2
+        }
+      },
+      "headSize": {
+        "_class": "expansion",
+        "values": [8, 32],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 2
+        }
+      },
+      "nHeads": {
+        "_class": "expansion",
+        "values": [2, 8],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 2
+        }
+      },
+      "nBlocks": {
+        "_class": "expansion",
+        "values": [1, 4],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 1
+        }
+      },
+      "mlpUnits": {
+        "_class": "expansion",
+        "values": [8,32],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 256,
+          "min": 2
+        }
+      },
+      "mlpDropout": 0.1,
+      "dropout": 0.1,
+      "learningRate": {
+        "_class": "expansion",
+        "values": [1e-3, 1e-4],
+        "generate": {
+          "kind": "multiply",
+          "value": 10,
+          "max": 1,
+          "min": 1e-7
+        }
+      },
+      "validationSplit": 0.1,
+      "epochs": 50,
+      "stepsPerEpoch": 100,
+      "posEncoding": "sinusoidal",
+      "posEncodeFactor": 2
+    }
+  ]
+}
