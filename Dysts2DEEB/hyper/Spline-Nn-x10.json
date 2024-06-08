@@ -1,0 +1,24 @@
+{
+  "_class": ["Trajs", "HyperParms", "Opts"],
+  "name": "",
+  "normalize": "meanAndCov",
+  "normalizeTime": 10,
+  "initialState": {
+    "_class": ["FromObs", "InitialState", "Opts"]
+  },
+  "fitTrajs": {
+    "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
+    "target": "point",
+    "interSteps": 50
+  },
+  "derivMethod": "none",
+  "derivFun": {
+    "_class": ["Knn", "DerivFun", "Opts"],
+    "neighbors": 1
+  },
+  "nInterTimeStepObs": 10,
+  "odeSolver": {
+    "_class": ["OdeSolver", "Opts"],
+    "timeStep": 0
+  }
+}
