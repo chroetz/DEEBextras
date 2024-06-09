@@ -5,7 +5,7 @@ source("04_PrepareTest.R")
 source("05_RunTest.R")
 
 
-
+stop()
 
 
 if (compareVersion(as.character(getRversion()), "4.1") < 0) {

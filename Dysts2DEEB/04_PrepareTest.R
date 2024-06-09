@@ -4,4 +4,4 @@ source("common.R")
 
 # Copy Optimized Options ----
 
-# TODO
+DEEBeval::copyBest(.DeebDystsTrainPath, .DeebDystsTestPath)
