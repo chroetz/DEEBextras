@@ -8,78 +8,99 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "contextLen": {
-        "_class": "expansion",
-        "values": [16,64],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 2
-        }
-      },
-      "posDim": {
-        "_class": "expansion",
-        "values": [8, 32],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 2
-        }
-      },
-      "headSize": {
-        "_class": "expansion",
-        "values": [8, 32],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 2
-        }
-      },
-      "nHeads": {
-        "_class": "expansion",
-        "values": [2, 8],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 2
-        }
-      },
-      "nBlocks": {
-        "_class": "expansion",
-        "values": [1, 4],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 1
-        }
-      },
-      "mlpUnits": {
-        "_class": "expansion",
-        "values": [8,32],
-        "generate": {
-          "kind": "multiply",
-          "value": 2,
-          "max": 256,
-          "min": 2
-        }
-      },
+      "contextLen": 64,
+      "posDim": 16,
+      "headSize": 64,
+      "nHeads": 4,
+      "nBlocks": 4,
+      "mlpUnits": 32,
       "mlpDropout": 0.1,
       "dropout": 0.1,
-      "learningRate": {
-        "_class": "expansion",
-        "values": [1e-3, 1e-4],
-        "generate": {
-          "kind": "multiply",
-          "value": 10,
-          "max": 1,
-          "min": 1e-7
-        }
+      "learningRate": 1e-3,
+      "validationSplit": 0.1,
+      "epochs": 50,
+      "stepsPerEpoch": 100,
+      "posEncoding": "sinusoidal",
+      "posEncodeFactor": 2
+    },
+    {
+      "_class": ["Transformer", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
       },
+      "contextLen": 32,
+      "posDim": 8,
+      "headSize": 32,
+      "nHeads": 16,
+      "nBlocks": 4,
+      "mlpUnits": 32,
+      "mlpDropout": 0.1,
+      "dropout": 0.1,
+      "learningRate": 1e-4,
+      "validationSplit": 0.1,
+      "epochs": 50,
+      "stepsPerEpoch": 100,
+      "posEncoding": "sinusoidal",
+      "posEncodeFactor": 2
+    },
+    {
+      "_class": ["Transformer", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "contextLen": 32,
+      "posDim": 32,
+      "headSize": 16,
+      "nHeads": 16,
+      "nBlocks": 4,
+      "mlpUnits": 32,
+      "mlpDropout": 0.1,
+      "dropout": 0.1,
+      "learningRate": 1e-4,
+      "validationSplit": 0.1,
+      "epochs": 50,
+      "stepsPerEpoch": 100,
+      "posEncoding": "sinusoidal",
+      "posEncodeFactor": 2
+    },
+    {
+      "_class": ["Transformer", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "contextLen": 32,
+      "posDim": 8,
+      "headSize": 16,
+      "nHeads": 16,
+      "nBlocks": 4,
+      "mlpUnits": 32,
+      "mlpDropout": 0.1,
+      "dropout": 0.1,
+      "learningRate": 1e-3,
+      "validationSplit": 0.1,
+      "epochs": 50,
+      "stepsPerEpoch": 100,
+      "posEncoding": "sinusoidal",
+      "posEncodeFactor": 2
+    },
+    {
+      "_class": ["Transformer", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "contextLen": 32,
+      "posDim": 8,
+      "headSize": 32,
+      "nHeads": 8,
+      "nBlocks": 4,
+      "mlpUnits": 64,
+      "mlpDropout": 0.1,
+      "dropout": 0.1,
+      "learningRate": 1e-4,
       "validationSplit": 0.1,
       "epochs": 50,
       "stepsPerEpoch": 100,
