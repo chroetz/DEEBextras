@@ -18,7 +18,7 @@ remotes::install_github("chroetz/DEEBplots")
 remotes::install_github("chroetz/DEEBdata")
 remotes::install_github("chroetz/DEEBeval")
 remotes::install_github("chroetz/DEEBesti")
-packageVersion()
+
 packageVersion("FastKNN")
 packageVersion("ConfigOpts")
 packageVersion("DEEButil")
