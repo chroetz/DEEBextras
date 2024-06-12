@@ -17,7 +17,7 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [1, 2],
         "generate": {
           "kind": "multiply",
           "value": 2,

@@ -1,2 +1,4 @@
 model,method,obs
 .,NeuralOdeSmall,.
+.,NeuralOdeWide,.
+.,NeuralOdeDeep,.

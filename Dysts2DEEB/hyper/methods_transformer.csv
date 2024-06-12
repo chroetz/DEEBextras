@@ -1,5 +1,2 @@
 model,method,obs
-.,TransformerBase1,.
-.,TransformerBase2,.
-.,Transformer50,.
-.,Transformer100,.
+.,Transformer,.
