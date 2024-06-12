@@ -10,6 +10,8 @@ if (!exists(.OptSet) || length(.OptSet) == 0) {
   .OptSet <- .OptSets[1] # MODIFY THIS or use Command Line Arg with string value
 }
 
+cat("Chose Option Set", .OptSet, "\n")
+
 
 
 # Options
@@ -28,11 +30,11 @@ if (!exists(.OptSet) || length(.OptSet) == 0) {
 .DeebDystsTrainPath <- switch(.OptSet,
   Cluster = "/p/projects/ou/labs/ai/DEEB/DystTrain",
   Local = "~/DEEBdystsTrain",
-  TestLocal = "~/DEEBdystsTrain_2",)
+  TestLocal = "~/DEEBdystsTrain_2")
 .DeebDystsTestPath <- switch(.OptSet,
   Cluster = "rojects/ou/labs/ai/DEEB/DystTest",
   Local = "~/DEEBdystsTest",
-  TestLocal = "~/DEEBdystsTest_2",)
+  TestLocal = "~/DEEBdystsTest_2")
 .DystsUrl <- "https://github.com/williamgilpin/dysts/archive/refs/tags/0.7.zip"
 .DystsDataUrl <- "https://github.com/williamgilpin/dysts_data/archive/refs/heads/main.zip"
 .HyperTemplatePath <- switch(.OptSet,
@@ -45,7 +47,7 @@ if (!exists(.OptSet) || length(.OptSet) == 0) {
 
 .MethodTableFilter <- switch(.OptSet,
   Local = c("methods_baseline.csv", "methods_esn.csv", "methods_linear.csv" , "methods_twostep.csv"),
-  Test = NULL,
+  TestLocal = NULL,
   Cluster = c("methods_baseline.csv", "methods_node.csv", "methods_transformer.csv"))
 
 

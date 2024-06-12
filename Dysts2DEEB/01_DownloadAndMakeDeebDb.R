@@ -1,4 +1,4 @@
-source("common.R")
+source("common.R", local=TRUE)
 
 
 
