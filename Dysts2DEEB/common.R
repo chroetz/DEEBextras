@@ -1,6 +1,7 @@
 # Options
 
 .ModelsFilter <- c("Aizawa", "Lorenz") # NULL
+.TryUsingSlurm <- FALSE # TRUE
 
 
 

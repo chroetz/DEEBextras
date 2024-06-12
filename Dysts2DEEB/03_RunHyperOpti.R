@@ -20,5 +20,7 @@ for (methodTableNamesChosen in methodTableNamesAll) {
     truthNrs,
     forceOverwrite = FALSE,
     runSummaryAfter = TRUE,
+    runLocal = !.TryUsingSlurm,
+    parallel = !.TryUsingSlurm,
     auto = TRUE)
 }
