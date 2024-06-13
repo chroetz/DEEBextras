@@ -30,6 +30,8 @@ task <- ConfigOpts::readOptsBare("task01.json")
 
 writeDataAsDeebModel <- function(jsonDataPath, dbPath, task) {
 
+  cat("Writing", jsonDataPath, "to", dbPath, "...\n")
+
   jsonData <- read_json(jsonDataPath)
   models <- names(jsonData)
   if (!is.null(.ModelsFilter)) models <- intersect(models, .ModelsFilter)
@@ -77,6 +79,8 @@ writeDataAsDeebModel(
 
 
 # Copy Method Results ----
+
+cat("Copying Method Results to ", .DeebDystsTestPath, "...\n")
 
 txtData <-
   file.path(
