@@ -40,7 +40,9 @@ cat("Chose Option Set", .OptSet, "\n")
 .HyperTemplatePath <- switch(.OptSet,
   Cluster = "/p/tmp/cschoetz/DEEBextras/Dysts2DEEB/hyper",
   "~/DEEBextras/Dysts2DEEB/hyper")
-
+.DeebJlPath <- switch(.OptSet,
+  Cluster = "/p/tmp/cschoetz/DEEB.jl",
+  "~/DEEB_jl")
 
 
 # method table filter ----
