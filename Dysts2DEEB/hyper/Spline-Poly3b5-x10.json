@@ -9,11 +9,11 @@
   "fitTrajs": {
     "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
     "target": "point",
-    "interSteps": 10
+    "interSteps": 5
   },
   "derivFun": {
     "_class": ["ThreshLm", "DerivFun", "Opts"],
-    "features": "poly2",
+    "features": "poly3",
     "threshold": 0,
     "iterations": 1
   },

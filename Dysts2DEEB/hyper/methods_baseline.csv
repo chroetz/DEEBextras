@@ -1,4 +1,4 @@
-model,method,obs
+model,methodFile,obs
 .,ConstLast,.
 .,ConstMean,.
 .,Analogue,.

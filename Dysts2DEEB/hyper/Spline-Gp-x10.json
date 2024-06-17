@@ -12,7 +12,7 @@
       "fitTrajs": {
         "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
         "target": "point",
-        "interSteps": 10
+        "interSteps": 5
       },
       "derivMethod": "none",
       "derivFun": {

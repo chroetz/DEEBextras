@@ -1,4 +1,4 @@
-model,method,obs
+model,methodFile,obs
 .,LinearNow_fxd_interp,.
 .,LinearPast_fxd_interp,.
 .,LinearPrev_fxd_interp,.

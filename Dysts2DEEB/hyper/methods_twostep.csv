@@ -1,8 +1,0 @@
-model,method,obs
-.,Gp-Gp-interp-x10,.
-.,PwLin-Nn-x10,.
-.,Spline-Gp-x10,.
-.,Spline-Nn-x10,.
-.,Spline-Poly2b-x10,.
-.,Spline-Poly5b-x10,.
-.,Spline-ThreshLm-x10,.
