@@ -3,7 +3,7 @@
   "name": "",
   "list": [
     {
-      "_class": ["Transformer", "HyperParms", "Opts"],
+      "_class": ["Transformer", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
@@ -24,7 +24,7 @@
       "posEncodeFactor": 2
     },
     {
-      "_class": ["Transformer", "HyperParms", "Opts"],
+      "_class": ["Transformer", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
@@ -45,7 +45,7 @@
       "posEncodeFactor": 2
     },
     {
-      "_class": ["Transformer", "HyperParms", "Opts"],
+      "_class": ["Transformer", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
@@ -66,7 +66,7 @@
       "posEncodeFactor": 2
     },
     {
-      "_class": ["Transformer", "HyperParms", "Opts"],
+      "_class": ["Transformer", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
@@ -87,7 +87,7 @@
       "posEncodeFactor": 2
     },
     {
-      "_class": ["Transformer", "HyperParms", "Opts"],
+      "_class": ["Transformer", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]

@@ -17,7 +17,7 @@ cat("Chose Option Set", .OptSet, "\n")
 # Options
 
 .ModelsFilter <- switch(.OptSet,
-  TestLocal = c("Aizawa", "Lorenz"),
+  TestLocal = c("Aizawa", "DoublePendulum"),
   NULL)
 .TryUsingSlurm <- switch(.OptSet,
   Cluster = TRUE,

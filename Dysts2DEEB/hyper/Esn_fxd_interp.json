@@ -3,7 +3,7 @@
   "name": "",
   "list": [
     {
-      "_class": ["Esn", "HyperParms", "Opts"],
+      "_class": ["Esn", "Propagator", "HyperParms", "Opts"],
       "normalize": "meanAndCov",
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]

@@ -1,5 +1,9 @@
 .OptSet <- commandArgs(TRUE)
 
+# .OptSet <- "TestLocal"
+# .OptSet <- "Local"
+# .OptSet <- "Cluster"
+
 cat("commandArgs:", .OptSet, "\n\n")
 
 source("01_DownloadAndMakeDeebDb.R", local=TRUE)
