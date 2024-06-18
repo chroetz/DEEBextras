@@ -7,6 +7,9 @@
 )
 
 if (!exists(".OptSet") || length(.OptSet) == 0) {
+  .OptSet <- commandArgs(TRUE)
+}
+if (!exists(".OptSet") || length(.OptSet) == 0) {
   .OptSet <- .OptSets[1] # MODIFY THIS or use Command Line Arg with string value
 }
 

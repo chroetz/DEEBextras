@@ -24,7 +24,7 @@ Spline-Nn-500,10,1
 Spline-Poly2-500,10,1
 Spline-ThreshLm-500,10,1
 Transformer,1440,1
-NeuralOdeSmall,100,1
-NeuralOdeWide,200,1
-NeuralOdeDeep,200,1
+NeuralOdeSmall,1440,1
+NeuralOdeWide,1440,2
+NeuralOdeDeep,1440,1
 
