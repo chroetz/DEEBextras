@@ -8,16 +8,10 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "pastSteps": 0,
+      "pastSteps": 1,
       "polyDeg": {
         "_class": "expansion",
-        "values": [2, 4, 6],
-        "generate": {
-          "kind": "add",
-          "value": 1,
-          "max": 8,
-          "min": 1
-        }
+        "values": [1, 2, 3]
       },
       "l2Penalty": {
         "_class": "expansion",
@@ -29,10 +23,13 @@
           "min": 1e-15
         }
       },
-      "skip": 0,
+      "skip": {
+        "_class": "expansion",
+        "values": [0, 1, 2, 3]
+      },
       "timeStepAsInput": false,
       "derivOrder": 1,
-      "targetType": "state"
+      "targetType": "deriv"
     }
   ]
 }

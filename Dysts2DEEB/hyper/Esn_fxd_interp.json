@@ -32,7 +32,7 @@
       },
       "l2Penalty": {
         "_class": "expansion",
-        "values": [1e-09, 1e-07, 1e-05],
+        "values": [1e-11, 1e-08, 1e-05],
         "generate": {
           "kind": "multiply",
           "value": 10,
@@ -46,7 +46,8 @@
       "seed": 1,
       "skip": 0,
       "derivOrder": 1,
-      "timeStepAsInput": false
+      "timeStepAsInput": false,
+      "targetType": "state"
     }
   ]
 }

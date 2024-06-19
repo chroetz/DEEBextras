@@ -1,0 +1,36 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Regression", "Propagator", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "pastSteps": 0,
+      "skip": 0,
+      "timeStepAsInput": false,
+      "derivOrder": 1,
+      "neighbors": 50,
+      "propagatorRegression": {
+          "_class": ["LocalLinear", "PropagatorRegression", "Opts"],
+          "bandwidth": {
+            "_class": "expansion",
+            "values": [1e-3, 32e-3, 1024e-3],
+            "generate": {
+              "kind": "multiply",
+              "value": 2,
+              "max": 100,
+              "min": 1e-8
+            }
+          },
+          "kernel": {
+            "_class": "expansion",
+            "values": ["Parab", "Normal"]
+          }
+      },
+      "targetType": "deriv"
+    }
+  ]
+}
