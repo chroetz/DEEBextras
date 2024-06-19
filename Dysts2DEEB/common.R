@@ -31,11 +31,11 @@ cat("Chose Option Set", .OptSet, "\n")
 # Set URLs and Paths ----
 
 .DeebDystsTrainPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystTrain",
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsTrain",
   Local = "~/DEEBdystsTrain",
   TestLocal = "~/DEEBdystsTrain_2")
 .DeebDystsTestPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystTest",
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsTest",
   Local = "~/DEEBdystsTest",
   TestLocal = "~/DEEBdystsTest_2")
 .DystsUrl <- "https://github.com/williamgilpin/dysts/archive/refs/tags/0.7.zip"
