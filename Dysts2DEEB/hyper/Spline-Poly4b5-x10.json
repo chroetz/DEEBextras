@@ -13,7 +13,7 @@
   },
   "derivFun": {
     "_class": ["ThreshLm", "DerivFun", "Opts"],
-    "features": "poly5",
+    "features": "poly4",
     "threshold": 0,
     "iterations": 1
   },
