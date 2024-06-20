@@ -21,6 +21,7 @@ stopifnot(length(dystsDataRootDir) == 1, dir.exists(dystsDataRootDir))
 
 dystDataPath <- file.path(dystsDataRootDir, "dysts_data/data")
 dystResultsPath <- file.path(dystsRootDir, "benchmarks/results")
+dystsLyapunovPath <- file.path(dystsRootDir, "dysts/data/lyapunov_exponents_qr.txt")
 
 
 
@@ -138,3 +139,8 @@ writeResultsCompound("results_test_multivariate__pts_per_period_100__periods_12.
 writeResultsOne("DystsEsn", "results_esn_multivariate.json.gz")
 writeResultsOne("DystsNeuralOde", "results_neural_ode_multivariate.json.gz")
 writeResultsOne("DystsNvar", "results_nvar_multivariate.json.gz")
+
+
+data <- read_delim(dystsLyapunovPath, delim=": ", col_names=c("Model", "LyapunovExponent"))
+dir.create(file.path(.DeebDystsTestPath, "_info"))
+write_csv(data, file.path(.DeebDystsTestPath, "_info", "LyapunovExponents.csv"))
