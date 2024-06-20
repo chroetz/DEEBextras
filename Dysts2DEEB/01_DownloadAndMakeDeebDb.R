@@ -141,6 +141,8 @@ writeResultsOne("DystsNeuralOde", "results_neural_ode_multivariate.json.gz")
 writeResultsOne("DystsNvar", "results_nvar_multivariate.json.gz")
 
 
-data <- read_delim(dystsLyapunovPath, delim=": ", col_names=c("Model", "LyapunovExponent"))
+data <-
+  read_delim(dystsLyapunovPath, delim=": ", col_names=c("model", "lyapunovExponent")) |>
+  distinct()
 dir.create(file.path(.DeebDystsTestPath, "_info"))
 write_csv(data, file.path(.DeebDystsTestPath, "_info", "LyapunovExponents.csv"))
