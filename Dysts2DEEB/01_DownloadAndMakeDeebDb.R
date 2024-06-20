@@ -80,36 +80,61 @@ writeDataAsDeebModel(
 
 # Copy Method Results ----
 
+
 cat("Copying Method Results to ", .DeebDystsTestPath, "...\n")
 
-txtData <-
-  file.path(
-    dystResultsPath,
-    "results_test_multivariate__pts_per_period_100__periods_12.json.gz"
-  ) |>
-  read_lines()
-jsonData <-
-  txtData |>
-  str_replace_all("(-Infinity)|Infinity|NaN", "null") |>
-  fromJSON()
 
-models <- names(jsonData)
-if (!is.null(.ModelsFilter)) models <- intersect(models, .ModelsFilter)
+readJsonResults <- function(jsonFile) {
+  txtData <-
+    file.path(dystResultsPath, jsonFile) |>
+    read_lines()
+  jsonData <-
+    txtData |>
+    str_replace_all("(-Infinity)|Infinity|NaN", "null") |>
+    fromJSON()
+  return(jsonData)
+}
 
-for (model in models) {
-  paths <- DEEBpath::getPaths(.DeebDystsTestPath, model)
-  data <- jsonData[[model]]
-  taskTruth <- DEEBtrajs::readTrajs(file.path(paths$truth, DEEBpath::taskTruthFile(truthNr=1, taskNr=1)))
-  methods <- names(data) |> setdiff("values")
-  for (method in methods) {
+
+writeResultsCompound <- function(jsonFile) {
+  jsonData <- readJsonResults(jsonFile)
+  models <- names(jsonData)
+  if (!is.null(.ModelsFilter)) models <- intersect(models, .ModelsFilter)
+  for (model in models) {
+    paths <- DEEBpath::getPaths(.DeebDystsTestPath, model)
+    data <- jsonData[[model]]
+    taskTruth <- DEEBtrajs::readTrajs(file.path(paths$truth, DEEBpath::taskTruthFile(truthNr=1, taskNr=1)))
+    methods <- names(data) |> setdiff("values")
+    for (method in methods) {
+      methodName <- paste0("Dysts", str_remove(method, "Model$"))
+      methodPath <- file.path(paths$esti, methodName)
+      dir.create(methodPath, showWarnings=FALSE, recursive=TRUE)
+      esti <- DEEBtrajs::makeTrajs(time = taskTruth$time, state = data[[method]]$prediction)
+      DEEBtrajs::writeTrajs(esti, file.path(methodPath, DEEBpath::estiFile(truthNr=1, obsNr=1, taskNr=1)))
+    }
+  }
+}
+
+
+writeResultsOne <- function(method, jsonFile) {
+
+  jsonData <- readJsonResults(jsonFile)
+  models <- names(jsonData)
+  if (!is.null(.ModelsFilter)) models <- intersect(models, .ModelsFilter)
+
+  for (model in models) {
+    paths <- DEEBpath::getPaths(.DeebDystsTestPath, model)
+    data <- jsonData[[model]]
+    taskTruth <- DEEBtrajs::readTrajs(file.path(paths$truth, DEEBpath::taskTruthFile(truthNr=1, taskNr=1)))
     methodPath <- file.path(paths$esti, method)
     dir.create(methodPath, showWarnings=FALSE, recursive=TRUE)
-    esti <- DEEBtrajs::makeTrajs(time = taskTruth$time, state = data[[method]]$prediction)
+    esti <- DEEBtrajs::makeTrajs(time = taskTruth$time, state = data$traj_pred)
     DEEBtrajs::writeTrajs(esti, file.path(methodPath, DEEBpath::estiFile(truthNr=1, obsNr=1, taskNr=1)))
   }
 }
 
 
-
-
-# TODO: download DEEB jl if not there (https://github.com/chroetz/DEEB.jl)
+writeResultsCompound("results_test_multivariate__pts_per_period_100__periods_12.json.gz")
+writeResultsOne("DystsEsn", "results_esn_multivariate.json.gz")
+writeResultsOne("DystsNeuralOde", "results_neural_ode_multivariate.json.gz")
+writeResultsOne("DystsNvar", "results_nvar_multivariate.json.gz")
