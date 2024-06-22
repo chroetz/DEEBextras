@@ -17,7 +17,16 @@
       },
       "derivFun": {
         "_class": ["ThreshLm", "DerivFun", "Opts"],
-        "features": "poly7",
+        "polyDeg": {
+            "_class": "expansion",
+            "values": [2, 3, 4],
+            "generate": {
+                "kind": "add",
+                "value": 1,
+                "max": 8,
+                "min": 1
+            }
+        },
         "threshold": 0,
         "iterations": 0,
         "l2Penalty": {

@@ -13,6 +13,15 @@ for (path in dir(.HyperTemplatePath, full.names=TRUE)) {
 cat("Done.\n")
 
 
+testHyperPath <- file.path(.DeebDystsTestPath, "_hyper")
+dir.create(testHyperPath)
+cat("Copying special hyper files from", .HyperTemplatePath, "to", testHyperPath, "... ")
+for (path in dir(.HyperTemplatePath, full.names=TRUE, pattern = "^_")) {
+  file.copy(from = path, to = trainHyperPath, recursive = TRUE, overwrite = TRUE)
+}
+cat("Done.\n")
+
+
 
 # Set deebNeuralOdeProjectPath in _hyper/NeuralOde.*\\.json ----
 

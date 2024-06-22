@@ -1,25 +1,41 @@
 {
-  "_class": ["Trajs", "HyperParms", "Opts"],
+  "_class": ["HyperParms", "List", "Opts"],
   "name": "",
-  "normalize": "meanAndCov",
-  "normalizeTime": 10,
-  "initialState": {
-    "_class": ["FromObs", "InitialState", "Opts"]
-  },
-  "fitTrajs": {
-    "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
-    "target": "point",
-    "interSteps": 5
-  },
-  "derivFun": {
-    "_class": ["ThreshLm", "DerivFun", "Opts"],
-    "features": "poly3",
-    "threshold": 0,
-    "iterations": 1
-  },
-  "nInterTimeStepObs": 10,
-  "odeSolver": {
-    "_class": ["OdeSolver", "Opts"],
-    "timeStep": 0
-  }
+  "list": [
+    {
+      "_class": ["Trajs", "HyperParms", "Opts"],
+      "name": "",
+      "normalize": "meanAndCov",
+      "normalizeTime": 10,
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "fitTrajs": {
+        "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
+        "target": "point",
+        "interSteps": 5
+      },
+      "derivFun": {
+        "_class": ["ThreshLm", "DerivFun", "Opts"],
+        "features": "poly3",
+        "threshold": 0,
+        "iterations": 0,
+        "l2Penalty": {
+          "_class": "expansion",
+          "values": [0, 1e-14, 1e-5],
+          "generate": {
+              "kind": "multiply",
+              "value": 10,
+              "max": 100,
+              "min": 1e-15
+            }
+        }
+      },
+      "nInterTimeStepObs": 10,
+      "odeSolver": {
+        "_class": ["OdeSolver", "Opts"],
+        "timeStep": 0
+      }
+    }
+  ]
 }
