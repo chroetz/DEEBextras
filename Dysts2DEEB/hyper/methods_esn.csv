@@ -1,5 +1,3 @@
 model,methodFile,obs
 .,RandomFeatures_fxd_interp,.
 .,Esn_fxd_interp,.
-.,RandomFeatures_fxd_interp_deriv,.
-.,Esn_fxd_interp_deriv,.
