@@ -25,10 +25,7 @@
               "min": 1e-8
             }
           },
-          "kernel": {
-            "_class": "expansion",
-            "values": ["Parab", "Normal"]
-          }
+          "kernel": "Normal"
       },
       "targetType": "deriv"
     }

@@ -14,7 +14,7 @@
         "generate": {
           "kind": "multiply",
           "value": 2,
-          "max": 512,
+          "max": 64,
           "min": 1
         }
       },
