@@ -15,7 +15,7 @@
       "propagatorRegression": {
           "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
           "batchSize": 32,
-          "epochs": 400, 
+          "epochs": 1000, 
           "validationSplit": 0.1,
           "layers": [32, 32],
           "activation": "swish",
@@ -36,7 +36,7 @@
       "propagatorRegression": {
           "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
           "batchSize": 32,
-          "epochs": 400, 
+          "epochs": 1000, 
           "validationSplit": 0.1,
           "layers": [32, 32, 32, 32],
           "activation": "swish",
@@ -57,7 +57,7 @@
       "propagatorRegression": {
           "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
           "batchSize": 32,
-          "epochs": 400, 
+          "epochs": 1000, 
           "validationSplit": 0.1,
           "layers": [128, 128],
           "activation": "swish",
@@ -78,7 +78,7 @@
       "propagatorRegression": {
           "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
           "batchSize": 32,
-          "epochs": 400, 
+          "epochs": 1000, 
           "validationSplit": 0.1,
           "layers": [64, 128, 64],
           "activation": "swish",
