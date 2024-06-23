@@ -1,0 +1,53 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Trajs", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "normalizeTime": 10,
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "fitTrajs": {
+        "_class": ["InterpolationSpline", "FitTrajs", "Opts"],
+        "target": "point",
+        "interSteps": 5
+      },
+      "derivMethod": "none",
+      "derivFun": {
+        "_class": ["GaussianProcess", "DerivFun", "Opts"],
+        "neighbors": 50,
+        "bandwidth": {
+          "_class": "expansion",
+          "values": [0.5, 1],
+          "generate": {
+            "kind": "multiply",
+            "value": 2,
+            "max": 100,
+            "min": 1e-7
+          }
+        },
+        "regulation": {
+          "_class": "expansion",
+          "values": [1e-12, 1e-08, 1e-04],
+          "generate": {
+            "kind": "multiply",
+            "value": 10,
+            "max": 100,
+            "min": 1e-15
+          }
+        },
+        "modifierList": {
+          "_class": ["Modifier", "List", "Opts"],
+          "list": []
+        }
+      },
+      "nInterTimeStepObs": 10,
+      "odeSolver": {
+        "_class": ["OdeSolver", "Opts"],
+        "timeStep": 0
+      }
+    }
+  ]
+}
