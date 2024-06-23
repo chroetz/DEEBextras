@@ -1,4 +1,2 @@
 model,methodFile,obs
-.,Spline-Gp,.
-.,PwLin-Nn,.
-.,Spline-Nn,.
+.,Ll-Nn,.
