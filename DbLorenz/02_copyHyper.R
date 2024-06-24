@@ -1,26 +1,32 @@
-deebExtrasPath <- "~/DEEBextras"
-sourceBasePath <- "~/DEEBextras/DbLorenz"
-targetBasePath <- "~/DeebDbLorenz"
+source("common.R")
 
+copyHyper <- function(sourceHyper, targetDb) {
 
+  targetHyperPath <- file.path(targetDb, "_hyper")
+  dir.create(targetHyperPath)
+  cat("Copying hyper files from", sourceHyper, "to", targetHyperPath, "... ")
+  for (path in dir(sourceHyper, full.names=TRUE)) {
+    file.copy(from = path, to = targetHyperPath, recursive = TRUE, overwrite = TRUE)
+  }
+  cat("Done.\n")
 
-
-tuneDbPath <- paste0(targetBasePath, "Tune")
-testDbPath <- paste0(targetBasePath, "Test")
-hyperTemplatePath <- file.path(sourceBasePath, "hyper")
-hyperTemplate2Path <- file.path(deebExtrasPath, "hyper")
-
-
-
-
-tuneHyperPath <- file.path(tuneDbPath, "_hyper")
-dir.create(tuneHyperPath)
-cat("Copying hyper files from", hyperTemplatePath, "to", tuneHyperPath, "... ")
-for (path in dir(hyperTemplatePath, full.names=TRUE)) {
-  file.copy(from = path, to = tuneHyperPath, recursive = TRUE, overwrite = TRUE)
+  # Set deebNeuralOdeProjectPath in _hyper/NeuralOde.*\\.json ----
+  cat("Try to set DEEB.jl path to", .DeebJlPath, "\n")
+  paths <- list.files(targetHyperPath, pattern = "^NeuralOde.*\\.json$", full.names=TRUE)
+  cat("Found following NeuralOde files:\n", paste0("\t", paths, "\n", collapse=""))
+  for (path in paths) {
+    opts <- ConfigOpts::readOptsBare(path)
+    for (i in seq_along(opts$list)) {
+      if ("deebNeuralOdeProjectPath" %in% names(opts$list[[i]])) {
+        opts$list[[i]]$deebNeuralOdeProjectPath <- .DeebJlPath
+      }
+    }
+    ConfigOpts::writeOpts(opts, path, addMetaInfo = FALSE, validate = FALSE, warn = FALSE)
+  }
+  cat("Done.\n")
 }
-cat("Copying hyper files from", hyperTemplate2Path, "to", tuneHyperPath, "... ")
-for (path in dir(hyperTemplate2Path, full.names=TRUE)) {
-  file.copy(from = path, to = tuneHyperPath, recursive = TRUE, overwrite = TRUE)
-}
-cat("Done.\n")
+
+copyHyper(.HyperTemplatePath, .DeebDbLorenzTunePath)
+copyHyper(.HyperTemplate2Path, .DeebDbLorenzTunePath)
+copyHyper(.HyperTemplatePath, .DeebDbLorenzTestPath)
+copyHyper(.HyperTemplate2Path, .DeebDbLorenzTestPath)

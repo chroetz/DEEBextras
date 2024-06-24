@@ -22,7 +22,7 @@
               "min": 1e-4
             }
         },
-        "kernel": "Normal",
+        "kernel": "FastApproxGauss",
         "degree": 1
       },
       "derivMethod": "none",
