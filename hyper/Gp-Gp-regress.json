@@ -31,14 +31,14 @@
         "_class": ["GaussianProcess", "DerivFun", "Opts"],
         "neighbors": 50,
         "bandwidth": {
-          "_class": "expansion",
-          "values": [0.25, 1, 4],
-          "generate": {
-            "kind": "multiply",
-            "value": 2,
-            "max": 100,
-            "min": 1e-8
-          }
+            "_class": "expansion",
+            "values": [0.05, 0.2, 0.8],
+            "generate": {
+              "kind": "multiply",
+              "value": 2,
+              "max": 10,
+              "min": 1e-4
+            }
         },
         "regulation": {
           "_class": "expansion",
