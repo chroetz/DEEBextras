@@ -31,8 +31,8 @@ cat("Found following NeuralOde files:\n", paste0("\t", paths, "\n", collapse="")
 for (path in paths) {
   opts <- ConfigOpts::readOptsBare(path)
   for (i in seq_along(opts$list)) {
-    if ("deebNeuralOdeProjectPath" %in% names(opts$list[[1]])) {
-      opts$list[[1]]$deebNeuralOdeProjectPath <- .DeebJlPath
+    if ("deebNeuralOdeProjectPath" %in% names(opts$list[[i]])) {
+      opts$list[[i]]$deebNeuralOdeProjectPath <- .DeebJlPath
     }
   }
   ConfigOpts::writeOpts(opts, path, addMetaInfo = FALSE, validate = FALSE)
