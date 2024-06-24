@@ -4,9 +4,6 @@ targetBasePath <- "~/DeebDbLorenz"
 
 
 
-library(DEEBdata)
-
-
 
 tuneDbPath <- paste0(targetBasePath, "Tune")
 testDbPath <- paste0(targetBasePath, "Test")
@@ -14,17 +11,6 @@ hyperTemplatePath <- file.path(sourceBasePath, "hyper")
 hyperTemplate2Path <- file.path(deebExtrasPath, "hyper")
 
 
-
-set.seed(0)
-
-runAll(
-  dbPath = tuneDbPath,
-  reps = 10,
-  optsPath = file.path(sourceBasePath, "SimulationOpts"),
-  fromPackage = FALSE,
-  truth = TRUE, obs = TRUE, task = TRUE, plot = TRUE,
-  randomizeSeed = TRUE
-)
 
 
 tuneHyperPath <- file.path(tuneDbPath, "_hyper")
@@ -38,15 +24,3 @@ for (path in dir(hyperTemplate2Path, full.names=TRUE)) {
   file.copy(from = path, to = tuneHyperPath, recursive = TRUE, overwrite = TRUE)
 }
 cat("Done.\n")
-
-
-
-
-runAll(
-  dbPath = testDbPath,
-  reps = 100,
-  optsPath = file.path(sourceBasePath, "SimulationOpts"),
-  fromPackage = FALSE,
-  truth = TRUE, obs = TRUE, task = TRUE, plot = TRUE,
-  randomizeSeed = FALSE
-)
