@@ -23,10 +23,10 @@ LocalLinearPropa_deriv,30,1
 LocalLinearPropa_deriv_time,30,1
 LocalLinearPropa_state,30,1
 LocalLinearPropa_state_time,30,1
-NeuralNetPropa_deriv,200,2
-NeuralNetPropa_deriv_time,200,2
-NeuralNetPropa_state,200,2
-NeuralNetPropa_state_time,200,2
+NeuralNetPropa_deriv,30,2
+NeuralNetPropa_deriv_time,30,2
+NeuralNetPropa_state,30,2
+NeuralNetPropa_state_time,30,2
 NeuralOde200,800,4
 NeuralOde500,800,4
 PwLin-Nn,10,1
@@ -41,6 +41,6 @@ Spline-Poly2,10,1
 Spline-Poly4,10,1
 Spline-ThreshLm,30,1
 Spline-ThreshLmRotate,30,1
-Transformer50,200,4
-Transformer200,800,4
-Transformer400,800,4
+Transformer50,100,4
+Transformer200,200,4
+Transformer400,300,4
