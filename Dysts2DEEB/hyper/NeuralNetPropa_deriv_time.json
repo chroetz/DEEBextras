@@ -17,28 +17,7 @@
           "batchSize": 32,
           "epochs": 1000, 
           "validationSplit": 0.1,
-          "layers": [32, 32],
-          "activation": "swish",
-          "learningRate": 2e-4
-      },
-      "targetType": "deriv"
-    },
-    {
-      "_class": ["Regression", "Propagator", "HyperParms", "Opts"],
-      "normalize": "meanAndCov",
-      "initialState": {
-        "_class": ["FromObs", "InitialState", "Opts"]
-      },
-      "pastSteps": 0,
-      "skip": 0,
-      "timeStepAsInput": true,
-      "derivOrder": 1,
-      "propagatorRegression": {
-          "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
-          "batchSize": 32,
-          "epochs": 1000, 
-          "validationSplit": 0.1,
-          "layers": [32, 32, 32, 32],
+          "layers": [32, 64, 64, 32],
           "activation": "swish",
           "learningRate": 2e-4
       },
@@ -73,7 +52,7 @@
       },
       "pastSteps": 0,
       "skip": 0,
-      "timeStepAsInput": false,
+      "timeStepAsInput": true,
       "derivOrder": 1,
       "propagatorRegression": {
           "_class": ["NeuralNet", "PropagatorRegression", "Opts"],
