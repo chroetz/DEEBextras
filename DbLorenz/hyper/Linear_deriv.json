@@ -1,0 +1,56 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Linear", "Propagator", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "pastSteps": {
+        "_class": "expansion",
+        "values": [0, 1],
+        "generate": {
+          "kind": "add",
+          "value": 1,
+          "max": 32,
+          "min": 1
+        }
+      },
+      "polyDeg": {
+        "_class": "expansion",
+        "values": [3, 4],
+        "generate": {
+          "kind": "add",
+          "value": 1,
+          "max": 8,
+          "min": 1
+        }
+      },
+      "l2Penalty": {
+        "_class": "expansion",
+        "values": [1e-12, 1e-08, 1e-04],
+        "generate": {
+          "kind": "multiply",
+          "value": 10,
+          "max": 100,
+          "min": 1e-15
+        }
+      },
+      "skip": {
+        "_class": "expansion",
+        "values": [0, 1],
+        "generate": {
+          "kind": "add",
+          "value": 1,
+          "max": 8,
+          "min": 1
+        }
+      },
+      "timeStepAsInput": false,
+      "derivOrder": 1,
+      "targetType": "deriv"
+    }
+  ]
+}

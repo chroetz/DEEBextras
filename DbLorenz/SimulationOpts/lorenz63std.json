@@ -1,0 +1,114 @@
+{
+    "_class": ["Run", "Opts"],
+    "name": "lorenz63std",
+    "path": "",
+    "truth": {
+        "_class": ["Truth", "Opts"],
+        "reps": 1,
+        "timeRange": [0, 110],
+        "odeSolver": {
+            "_class": ["OdeSolver", "Opts"],
+            "timeStep": 0.001
+        },
+        "deFunSampler": {
+            "_class": ["lorenz63", "Function", "Sampler", "Opts"],
+            "coefSampler": {
+                "_class": ["const", "Array", "Sampler", "Opts"],
+                "value": [10, 28, 2.6666666666666667]
+            }    
+        },
+        "u0Sampler": {
+            "_class": ["lorenz63", "Array", "Sampler", "Opts"]
+        }
+    },
+    "observation": {
+        "_class": ["Observation", "List", "Opts"],
+        "list": [
+            {
+                "_class": ["Observation", "Opts"],
+                "name": "fxd_noiseless",
+                "n": 10000,
+                "timeStep": 0.01,
+                "noiseFree": [1,-1],
+                "random": false,
+                "noiseSampler": {
+                    "_class": ["const", "Array", "Sampler", "Opts"],
+                    "value": 0
+                }
+            },
+            {
+                "_class": ["Observation", "Opts"],
+                "name": "fxd_noisy",
+                "n": 10000,
+                "timeStep": 0.01,
+                "noiseFree": [1,-1],
+                "random": false,
+                "noiseSampler": {
+                    "_class": ["normal", "Array", "Sampler", "Opts"],
+                    "sd": 0.1
+                }
+            },
+            {
+                "_class": ["Observation", "Opts"],
+                "name": "rnd_noiseless",
+                "n": 11000,
+                "timeLimit": 100,
+                "timeStep": 0.01,
+                "noiseFree": [1,-1],
+                "random": true,
+                "noiseSampler": {
+                    "_class": ["const", "Array", "Sampler", "Opts"],
+                    "value": 0
+                }
+            },
+            {
+                "_class": ["Observation", "Opts"],
+                "name": "rnd_noisy",
+                "n": 11000,
+                "timeLimit": 100,
+                "timeStep": 0.01,
+                "noiseFree": [1,-1],
+                "random": true,
+                "noiseSampler": {
+                    "_class": ["normal", "Array", "Sampler", "Opts"],
+                    "sd": 0.1
+                }
+            }
+        ]
+    },
+    "taskList": {
+        "_class": ["Task", "List", "Opts"],
+        "list": [
+            {
+                "_class": ["estiObsTrajs", "Task", "Opts"],
+                "name": "future",
+                "predictionTime": [100, 110],
+                "timeStep": 0.01,
+                "scoreList": {
+                    "_class": ["Score", "List", "Opts"],
+                    "list": [
+                        {
+                            "_class": ["CumMaxErr", "TimeState", "Score", "Opts"],
+                            "name": "CumMaxErr"
+                        },
+                        {
+                            "_class": ["ValidTime", "TimeState", "Score", "Opts"],
+                            "name": "ValidTime",
+                            "threshold": 0.4,
+                            "nomalization": "scale"
+                        },
+                        {
+                            "_class": ["Distance", "TimeState", "Score", "Opts"],
+                            "name": "sMAPE",
+                            "method": "L1",
+                            "optimalValue": 0,
+                            "methodArgs": [],
+                            "normalize": "norm",
+                            "factor": 100
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

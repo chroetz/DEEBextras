@@ -77,6 +77,16 @@ writeDataAsDeebModel(
   dbPath = .DeebDystsTrainPath,
   task = task)
 
+writeDataAsDeebModel(
+  jsonDataPath = file.path(dystDataPath, "test_multivariate__pts_per_period_100__periods_12_noise.json.gz"),
+  dbPath = .DeebDystsNoiseTestPath,
+  task = task)
+
+writeDataAsDeebModel(
+  jsonDataPath = file.path(dystDataPath, "train_multivariate__pts_per_period_100__periods_12_noise.json.gz"),
+  dbPath = .DeebDystsNoiseTrainPath,
+  task = task)
+
 
 
 # Copy Method Results ----

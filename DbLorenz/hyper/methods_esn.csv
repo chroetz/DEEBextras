@@ -1,0 +1,5 @@
+model,methodFile,obs
+.,RandomFeatures_state,.
+.,RandomFeatures_deriv,.
+.,Esn_state,.
+.,Esn_deriv,.

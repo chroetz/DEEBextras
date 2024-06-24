@@ -1,0 +1,40 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Trajs", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "normalizeTime": 10,
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "fitTrajs": {
+        "_class": ["LocalPolynomial", "FitTrajs", "Opts"],
+        "interSteps": 50,
+        "bandwidth": {
+          "_class": "expansion",
+          "values": [0.1, 0.4, 1.6],
+          "generate": {
+            "kind": "multiply",
+            "value": 2,
+            "max": 100,
+            "min": 1e-7
+          }
+        },
+        "kernel": "Normal",
+        "degree": 1
+      },
+      "derivMethod": "none",
+      "derivFun": {
+        "_class": ["Knn", "DerivFun", "Opts"],
+        "neighbors": 1
+      },
+      "nInterTimeStepObs": 10,
+      "odeSolver": {
+        "_class": ["OdeSolver", "Opts"],
+        "timeStep": 0
+      }
+    }
+  ]
+}

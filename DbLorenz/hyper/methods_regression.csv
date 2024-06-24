@@ -1,0 +1,5 @@
+model,methodFile,obs
+.,LocalLinearPropa_state,.
+.,LocalLinearPropa_deriv,.
+.,GpPropa_state,.
+.,GpPropa_deriv,.
