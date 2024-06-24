@@ -13,14 +13,14 @@
         "_class": ["LocalPolynomial", "FitTrajs", "Opts"],
         "interSteps": 50,
         "bandwidth": {
-          "_class": "expansion",
-          "values": [0.1, 0.4, 1.6],
-          "generate": {
-            "kind": "multiply",
-            "value": 2,
-            "max": 100,
-            "min": 1e-7
-          }
+            "_class": "expansion",
+            "values": [0.05, 0.2, 0.8],
+            "generate": {
+              "kind": "multiply",
+              "value": 2,
+              "max": 10,
+              "min": 1e-4
+            }
         },
         "kernel": "Normal",
         "degree": 1
