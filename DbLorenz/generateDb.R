@@ -7,8 +7,8 @@ library(DEEBdata)
 
 
 
-tuneDbPath <- paste0(targetBasePath, "_tune")
-testDbPath <- paste0(targetBasePath, "_test")
+tuneDbPath <- paste0(targetBasePath, "Tune")
+testDbPath <- paste0(targetBasePath, "Test")
 hyperTemplatePath <- file.path(sourceBasePath, "hyper")
 
 

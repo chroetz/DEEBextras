@@ -31,24 +31,27 @@ cat("Chose Option Set", .OptSet, "\n")
 # Set URLs and Paths ----
 
 .DeebDystsTrainPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsTrain",
-  Local = "~/DEEBdystsTrain",
-  TestLocal = "~/DEEBdystsTrain_2")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisefreeTune",
+  Local = "~/DeebDbDystsNoisefreeTune",
+  TestLocal = "~/DeebDbDystsNoisefreeTune_2")
 .DeebDystsNoiseTrainPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsTrainNoise",
-  Local = "~/DEEBdystsTrainNoise",
-  TestLocal = "~/DEEBdystsTrainNoise_2")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisyTune",
+  Local = "~/DeebDbDystsNoisyTune",
+  TestLocal = "~/DeebDbDystsNoisyTune_2")
 .DeebDystsTestPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsTest",
-  Local = "~/DEEBdystsTest",
-  TestLocal = "~/DEEBdystsTest_2")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisefreeTest",
+  Local = "~/DeebDbDystsNoisefreeTest",
+  TestLocal = "~/DeebDbDystsNoisefreeTest_2")
 .DeebDystsNoiseTestPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DystsNoiseTest",
-  Local = "~/DEEBdystsNoiseTest",
-  TestLocal = "~/DEEBdystsNoiseTest_2")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisyTest",
+  Local = "~/DeebDbDystsNoisyTest",
+  TestLocal = "~/DeebDbDystsNoisyTest_2")
 .DystsUrl <- "https://github.com/williamgilpin/dysts/archive/refs/tags/0.7.zip"
 .DystsDataUrl <- "https://github.com/williamgilpin/dysts_data/archive/refs/heads/main.zip"
 .HyperTemplatePath <- switch(.OptSet,
+  Cluster = "/p/tmp/cschoetz/DEEBextras/hyper",
+  "~/DEEBextras/hyper")
+.HyperTemplate2Path <- switch(.OptSet,
   Cluster = "/p/tmp/cschoetz/DEEBextras/Dysts2DEEB/hyper",
   "~/DEEBextras/Dysts2DEEB/hyper")
 .DeebJlPath <- switch(.OptSet,
