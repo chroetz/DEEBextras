@@ -9,7 +9,7 @@
         "_class": ["FromObs", "InitialState", "Opts"]
       },
       "outTimeStep": null,
-      "nOutSteps": 200,
+      "nOutSteps": 1000,
       "deebNeuralOdeProjectPath": "~/DEEB_jl",
       "seed": 1,
       "hiddenLayers":  2,
@@ -36,7 +36,7 @@
         "_class": ["FromObs", "InitialState", "Opts"]
       },
       "outTimeStep": null,
-      "nOutSteps": 200,
+      "nOutSteps": 1000,
       "deebNeuralOdeProjectPath": "~/DEEB_jl",
       "seed": 1,
       "hiddenLayers":  4,
@@ -63,7 +63,7 @@
         "_class": ["FromObs", "InitialState", "Opts"]
       },
       "outTimeStep": null,
-      "nOutSteps": 200,
+      "nOutSteps": 1000,
       "deebNeuralOdeProjectPath": "~/DEEB_jl",
       "seed": 1,
       "hiddenLayers":  2,
