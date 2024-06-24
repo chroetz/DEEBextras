@@ -1,16 +1,14 @@
 {
   "_class": ["estiObsTrajs", "Task", "Opts"],
   "name": "future",
-  "predictionTime": [100, 110],
-  "timeStep": 0.02,
+  "predictionTime": [0, 0],
+  "timeStep": 0,
   "scoreList": {
     "_class": ["Score", "List", "Opts"],
     "list": [
       {
-        "_class": ["FollowTime", "TimeState", "Score", "Opts"],
-        "name": "FollowTime",
-        "timeScale": 1,
-        "radius": 0.5
+        "_class": ["CumMaxErr", "TimeState", "Score", "Opts"],
+        "name": "CumMaxErr"
       },
       {
         "_class": ["ValidTime", "TimeState", "Score", "Opts"],
