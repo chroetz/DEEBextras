@@ -15,14 +15,14 @@
       "propagatorRegression": {
           "_class": ["LocalLinear", "PropagatorRegression", "Opts"],
           "neighbors": 50,
-          "bandwidth": {
+            "bandwidth": {
             "_class": "expansion",
-            "values": [1e-3, 32e-3, 1024e-3],
+            "values": [0.1, 0.4, 1.6],
             "generate": {
               "kind": "multiply",
               "value": 2,
-              "max": 100,
-              "min": 1e-8
+              "max": 10,
+              "min": 1e-4
             }
           },
           "kernel": "Normal"
