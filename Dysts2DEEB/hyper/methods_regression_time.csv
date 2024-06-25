@@ -1,5 +1,0 @@
-model,methodFile,obs
-.,LocalLinearPropa_state_time,.
-.,LocalLinearPropa_deriv_time,.
-.,GpPropa_state_time,.
-.,GpPropa_deriv_time,.

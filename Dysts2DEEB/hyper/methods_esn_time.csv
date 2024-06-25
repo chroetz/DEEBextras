@@ -1,5 +1,0 @@
-model,methodFile,obs
-.,RandomFeatures_state_time,.
-.,RandomFeatures_deriv_time,.
-.,Esn_state_time,.
-.,Esn_deriv_time,.
