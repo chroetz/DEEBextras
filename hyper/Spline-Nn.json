@@ -2,7 +2,6 @@
   "_class": ["Trajs", "HyperParms", "Opts"],
   "name": "",
   "normalize": "meanAndCov",
-  "normalizeTime": 10,
   "initialState": {
     "_class": ["FromObs", "InitialState", "Opts"]
   },

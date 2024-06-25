@@ -5,7 +5,6 @@
     {
       "_class": ["Trajs", "HyperParms", "Opts"],
       "normalize": "scale",
-      "normalizeTime": 10,
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
