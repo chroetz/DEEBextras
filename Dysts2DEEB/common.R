@@ -45,7 +45,7 @@ cat("Chose Option Set", .OptSet, "\n")
   Local = "~/DeebDbDystsNoisyTune",
   TestLocal = "~/DeebDbDystsNoisyTune_debug")
 .DeebDystsTestPath <- switch(.OptSet,
-  TestCluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisefreeTes_debugt",
+  TestCluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisefreeTest_debug",
   Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbDystsNoisefreeTest",
   Local = "~/DeebDbDystsNoisefreeTest",
   TestLocal = "~/DeebDbDystsNoisefreeTest_debug")
