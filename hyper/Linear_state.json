@@ -10,7 +10,7 @@
       },
       "pastSteps": {
         "_class": "expansion",
-        "values": [0, 1],
+        "values": [0, 1, 4],
         "generate": {
           "kind": "add",
           "value": 1,
@@ -20,7 +20,7 @@
       },
       "polyDeg": {
         "_class": "expansion",
-        "values": [3, 4],
+        "values": [1, 4],
         "generate": {
           "kind": "add",
           "value": 1,
