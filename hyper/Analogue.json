@@ -10,20 +10,9 @@
       },
       "requiredFutures": {
         "_class": "expansion",
-        "values": {
-          "A0": 1,
-          "A1": 2,
-          "A2": 3
-        }
+        "values": [1, 10, 100]
       },
-      "derivOrder": {
-        "_class": "expansion",
-        "values": {
-          "A0": 1,
-          "A1": 2,
-          "A2": 3
-        }
-      }
+      "derivOrder": 1
     }
   ]
 }
