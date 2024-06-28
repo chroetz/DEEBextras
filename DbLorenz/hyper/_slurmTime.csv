@@ -29,6 +29,7 @@ NeuralNetPropa_state,60,2
 NeuralNetPropa_state_time,60,2
 NeuralOde200,1440,4
 NeuralOde500,1440,4
+NeuralOde1000,1440,4
 PwLin-Nn,20,1
 RandomFeatures_deriv,10,1
 RandomFeatures_deriv_time,10,1
@@ -39,6 +40,6 @@ Spline-Nn,20,1
 Spline-Poly,40,1
 Spline-Poly2,20,1
 Spline-Poly4,20,1
-Spline-ThreshLm,60,1
-Spline-ThreshLmRotate,60,1
+Spline-ThreshLm,600,1
+Spline-ThreshLmRotate,600,1
 Transformer,600,4
