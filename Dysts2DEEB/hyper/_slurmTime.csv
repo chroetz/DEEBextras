@@ -35,7 +35,7 @@ RandomFeatures_state,5,1
 RandomFeatures_state_time,5,1
 Spline-Gp,30,1
 Spline-Nn,10,1
-Spline-Poly,20,1
+Spline-Poly,100,1
 Spline-Poly2,10,1
 Spline-Poly4,10,1
 Spline-ThreshLm,100,1
