@@ -16,8 +16,8 @@ Linear_deriv,10,1
 Linear_deriv_time,10,1
 Linear_state,10,1
 Linear_state_time,10,1
-Linear_Poly2,5,1
-Linear_Poly4,5,1
+Linear_Poly2,10,1
+Linear_Poly4,10,1
 Ll-Nn,30,1
 LocalLinearPropa_deriv,30,1
 LocalLinearPropa_deriv_time,30,1
