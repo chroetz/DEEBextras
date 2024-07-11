@@ -22,7 +22,7 @@ cat("Chose Option Set", .OptSet, "\n")
 
 .ModelsFilter <- switch(.OptSet,
   TestLocal = ,
-  TestCluster = c("MackeyGlass", "BickleyJet"),
+  TestCluster = c("MacArthur", "BickleyJet"),
   NULL)
 .TryUsingSlurm <- switch(.OptSet,
   TestCluster = ,

@@ -13,7 +13,7 @@ DEEBdata::runAll(
 
 DEEBdata::runAll(
   dbPath = .DeebDbLorenzTestPath,
-  reps = .TesrReps,
+  reps = .TestReps,
   optsPath = .SimulationOptsPath,
   fromPackage = FALSE,
   truth = TRUE, obs = TRUE, task = TRUE, plot = TRUE,
