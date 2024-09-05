@@ -1,0 +1,38 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["RecurrentNet", "Propagator", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "seed": {
+        "_class": "expansion",
+        "values": [1, 2]
+      },
+      "layers": {
+        "_class": "expansion",
+        "values": {
+          "a": [128],
+          "b": [64, 64],
+          "c": [32, 64, 32],
+          "d": [128, 128],
+          "e": [64, 128, 64],
+          "f": [32, 64, 64, 32]
+        }
+      }, 
+      "chunkLen": {
+        "_class": "expansion",
+        "values": [100,200]
+      },
+      "activation": "swish",
+      "slidingWindowStep": 1,
+      "learningRate": 1e-3,
+      "validationSplit": 0.1,
+      "epochs": 400,
+      "batchSize": 32
+    }
+  ]
+}
