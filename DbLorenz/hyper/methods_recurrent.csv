@@ -1,2 +1,4 @@
 model,methodFile,obs
 .,Rnn,.
+.,Lstm,.
+.,Gru,.
