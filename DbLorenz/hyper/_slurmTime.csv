@@ -43,3 +43,6 @@ Spline-Poly4,1440,1
 Spline-ThreshLm,1440,1
 Spline-ThreshLmRotate,1440,1
 Transformer,1440,4
+Gru,1440,1
+Lstm,1440,1
+Rnn,1440,1
