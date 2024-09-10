@@ -1,0 +1,4 @@
+model,methodFile,obs
+.,Rnn_time,.
+.,Lstm_time,.
+.,Gru_time,.

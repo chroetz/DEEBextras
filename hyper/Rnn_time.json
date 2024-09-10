@@ -8,7 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "timeStepAsInput": false,
+      "timeStepAsInput": true,
       "kind": "RNN",
       "seed": 1,
       "layers": {
