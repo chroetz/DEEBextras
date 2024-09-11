@@ -43,6 +43,10 @@ Spline-Poly4,20,1
 Spline-ThreshLm,600,1
 Spline-ThreshLmRotate,600,1
 Transformer,600,4
+Transformer_time,600,4
 Gru,200,1
 Lstm,200,1
 Rnn,200,1
+Gru_time,200,1
+Lstm_time,200,1
+Rnn_time,200,1
