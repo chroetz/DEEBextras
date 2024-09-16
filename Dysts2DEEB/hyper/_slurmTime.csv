@@ -40,7 +40,7 @@ Spline-Poly2,10,1
 Spline-Poly4,60,2
 Spline-ThreshLm,100,1
 Spline-ThreshLmRotate,100,1
-Transformer,60,4,
-Gru,30,1
-Lstm,30,1
-Rnn,30,1
+Transformer,120,4,
+Gru,60,1
+Lstm,60,1
+Rnn,60,1
