@@ -8,10 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "requiredFutures": {
-        "_class": "expansion",
-        "values": [1, 10, 100]
-      },
+      "requiredFutures": 10,
       "derivOrder": 1
     }
   ]

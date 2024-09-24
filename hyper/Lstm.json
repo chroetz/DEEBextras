@@ -8,6 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
+      "timeStepAsInput": false,
       "kind": "LSTM",
       "seed": 1,
       "layers": {

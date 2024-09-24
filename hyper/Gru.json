@@ -8,6 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
+      "timeStepAsInput": false,
       "kind": "GRU",
       "seed": 1,
       "layers": {
