@@ -7,7 +7,7 @@ DEEBdata::runAll(
   reps = .TuneReps,
   optsPath = .SimulationOptsPath,
   fromPackage = FALSE,
-  truth = TRUE, obs = TRUE, task = TRUE, plot = TRUE,
+  truth = TRUE, obs = TRUE, task = TRUE, plot = FALSE,
   randomizeSeed = TRUE
 )
 
@@ -16,6 +16,6 @@ DEEBdata::runAll(
   reps = .TestReps,
   optsPath = .SimulationOptsPath,
   fromPackage = FALSE,
-  truth = TRUE, obs = TRUE, task = TRUE, plot = TRUE,
+  truth = TRUE, obs = TRUE, task = TRUE, plot = FALSE,
   randomizeSeed = FALSE
 )
