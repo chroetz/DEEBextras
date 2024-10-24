@@ -31,19 +31,19 @@ cat("Chose Option Set", .OptSet, "\n")
 # Set URLs and Paths ----
 
 .DeebDbTunePath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTune",
-  Local = "~/DeebDbLorenzBigTune",
-  TestLocal = "~/DeebDbLorenzBigTune_1")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzSmallTune",
+  Local = "~/DeebDbLorenzSmallTune",
+  TestLocal = "~/DeebDbLorenzSmallTune_1")
 .DeebDbTestPath <- switch(.OptSet,
-  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTest",
-  Local = "~/DeebDbLorenzBigTest",
-  TestLocal = "~/DeebDbLorenzBigTest_1")
+  Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzSmallTest",
+  Local = "~/DeebDbLorenzSmallTest",
+  TestLocal = "~/DeebDbLorenzSmallTest_1")
 .DeebExtasPath <- switch(.OptSet,
   Cluster = "/p/tmp/cschoetz/DEEBextras",
   "~/DEEBextras")
 .HyperTemplatePath <- file.path(.DeebExtasPath, "hyper")
-.HyperTemplate2Path <- file.path(.DeebExtasPath, "DbLorenzBig", "hyper")
-.SimulationOptsPath <- file.path(.DeebExtasPath, "DbLorenzBig", "SimulationOpts")
+.HyperTemplate2Path <- file.path(.DeebExtasPath, "DbLorenzSmall", "hyper")
+.SimulationOptsPath <- file.path(.DeebExtasPath, "DbLorenzSmall", "SimulationOpts")
 .DeebJlPath <- switch(.OptSet,
   Cluster = "/p/tmp/cschoetz/DEEB.jl",
   "~/DEEB_jl")
