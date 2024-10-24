@@ -1,0 +1,3 @@
+model,methodFile,obs
+.,NeuralNetPropa_state_time,.
+.,NeuralNetPropa_deriv_time,.

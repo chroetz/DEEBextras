@@ -1,0 +1,2 @@
+model,taskNr,scoreName,target
+.,1,CumMaxErr,min
