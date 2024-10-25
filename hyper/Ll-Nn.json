@@ -22,7 +22,8 @@
             }
         },
         "kernel": "FastApproxGauss",
-        "degree": 1
+        "degree": 1,
+        "maxNeighbors": 1000
       },
       "derivMethod": "none",
       "derivFun": {
