@@ -24,9 +24,11 @@ LocalLinearPropa_deriv_time,1440,1
 LocalLinearPropa_state,1440,1
 LocalLinearPropa_state_time,1440,1
 NeuralNetPropa_deriv,1440,2
-NeuralNetPropa_deriv_time,1440,2
 NeuralNetPropa_state,1440,2
+NeuralNetPropa_deriv_time,1440,2
 NeuralNetPropa_state_time,1440,2
+NeuralNetPropa_deriv_bb,1440,2
+NeuralNetPropa_state_bb,1440,2
 NeuralOde200,1440,4
 NeuralOde500,1440,4
 NeuralOde1000,1440,4
@@ -43,10 +45,14 @@ Spline-Poly4,1440,1
 Spline-ThreshLm,1440,1
 Spline-ThreshLmRotate,1440,1
 Transformer,1440,4
+Transformer_bb,1440,4
 Transformer_time,1440,4
 Gru,1440,1
 Lstm,1440,1
 Rnn,1440,1
+Gru_bb,1440,1
+Lstm_bb,1440,1
+Rnn_bb,1440,1
 Gru_time,1440,1
 Lstm_time,1440,1
 Rnn_time,1440,1
