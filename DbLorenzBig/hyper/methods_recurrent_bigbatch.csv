@@ -1,0 +1,4 @@
+model,methodFile,obs
+.,Rnn_bb,.
+.,Lstm_bb,.
+.,Gru_bb,.
