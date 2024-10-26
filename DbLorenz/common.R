@@ -30,11 +30,11 @@ cat("Chose Option Set", .OptSet, "\n")
 
 # Set URLs and Paths ----
 
-.DeebDbLorenzTunePath <- switch(.OptSet,
+.DeebDbTunePath <- switch(.OptSet,
   Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzTune",
   Local = "~/DeebDbLorenzTune",
   TestLocal = "~/DeebDbLorenzTune_1")
-.DeebDbLorenzTestPath <- switch(.OptSet,
+.DeebDbTestPath <- switch(.OptSet,
   Cluster = "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzTest",
   Local = "~/DeebDbLorenzTest",
   TestLocal = "~/DeebDbLorenzTest_1")
