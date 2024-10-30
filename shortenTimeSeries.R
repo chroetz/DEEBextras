@@ -21,14 +21,14 @@ predictionTimeList <- list(
   c(1000, 1010)
 )
 
-dbPaths <- c(
-  "~/DeebDbLorenzBigTune",
-  "~/DeebDbLorenzBigTest"
-)
 # dbPaths <- c(
-#   "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTune",
-#   "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTest"
+#   "~/DeebDbLorenzBigTune",
+#   "~/DeebDbLorenzBigTest"
 # )
+dbPaths <- c(
+  "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTune",
+  "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTest"
+)
 
 models <- "lorenz63std"
 
