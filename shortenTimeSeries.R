@@ -21,14 +21,14 @@ predictionTimeList <- list(
   c(1000, 1010)
 )
 
-# dbPaths <- c(
-#   "~/DeebDbLorenzBigTune",
-#   "~/DeebDbLorenzBigTest"
-# )
 dbPaths <- c(
-  "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTune",
-  "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTest"
+  "~/DeebDbLorenzBigTune",
+  "~/DeebDbLorenzBigTest"
 )
+# dbPaths <- c(
+#   "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTune",
+#   "/p/projects/ou/labs/ai/DEEB/DeebDbLorenzBigTest"
+# )
 
 models <- "lorenz63std"
 
@@ -65,7 +65,6 @@ for (dbPath in dbPaths)  for (model in models) {
 
     for (i in seq_along(nSmaller)) {
       obsTarget <- obs[seq(nBase-nSmaller[i]+1, nBase), ]
-      #obsTarget$time <- obsTarget$time - obsTarget$time[1]
       DEEBtrajs::writeTrajs(obsTarget, file.path(pathsSmaller[[i]]$obs, obsFileName))
     }
   }
@@ -91,6 +90,34 @@ for (dbPath in dbPaths)  for (model in models) {
   }
   cat("\nTaskTruths End\n")
 
+  cat("ObsTruths Start\n")
+  for (truthNr in truthNrs) {
+    cat(truthNr, ". ", sep="")
+    taskTruthFileName <- DEEBpath::taskTruthFile(truthNr=truthNr, taskNr=1)
+    taskTruthFilePath <- file.path(paths$truth, taskTruthFileName)
+    for (i in seq_along(nSmaller)) {
+      file.copy(taskTruthFilePath, file.path(pathsSmaller[[i]]$truth, taskTruthFileName))
+    }
+  }
+  for (truthNr in truthNrs) for (obsNr in obsNrs) {
+
+    cat(truthNr, "-", obsNr, ". ", sep="")
+
+    obsTruthFileName <- DEEBpath::obsTruthFile(truthNr=truthNr, obsNr=obsNr)
+    obsTruthFilePath <- file.path(paths$truth, obsTruthFileName)
+
+    obsTruth <- DEEBtrajs::readTrajs(obsTruthFilePath)
+
+    stopifnot(nrow(obsTruth) == nBase)
+
+    for (i in seq_along(nSmaller)) {
+      obsTruthTarget <- obsTruth[seq(nBase-nSmaller[i]+1, nBase), ]
+      DEEBtrajs::writeTrajs(obsTruthTarget, file.path(pathsSmaller[[i]]$truth, obsTruthFileName))
+    }
+  }
+  cat("\nObsTruths End\n")
+
+  cat("Opts Start\n")
   opts <- ConfigOpts::readOptsBare(paths$runOpts)
   for (i in seq_along(nSmaller)) {
     optsTarget <- opts
@@ -104,6 +131,7 @@ for (dbPath in dbPaths)  for (model in models) {
     }
     ConfigOpts::writeOpts(optsTarget, pathsSmaller[[i]]$runOpts, validate=FALSE)
   }
+  cat("Opts End\n")
 
   cat("\nTHE END\n")
 }
