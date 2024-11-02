@@ -1,0 +1,56 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Esn", "Propagator", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "size": 4000,
+      "degree": 6,
+      "spectralRadius": 0.1,
+      "inWeightScale": {
+        "_class": "expansion",
+        "values": [0.025, 0.1, 0.4],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 100,
+          "min": 1e-7
+        }
+      },
+      "l2Penalty": {
+        "_class": "expansion",
+        "values": [1e-12, 1e-08, 1e-04],
+        "generate": {
+          "kind": "multiply",
+          "value": 10,
+          "max": 100,
+          "min": 1e-15
+        }
+      },
+      "bias": 1,
+      "warmUpLen": 1,
+      "initReservoirScale": 1,
+      "seed": {
+        "_class": "expansion",
+        "values": [1, 2, 3, 4]
+      },
+      "skip": {
+        "_class": "expansion",
+        "values": [0, 1],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 64,
+          "min": 1
+        }
+      },
+      "derivOrder": 1,
+      "timeStepAsInput": false,
+      "targetType": "state"
+    }
+  ]
+}

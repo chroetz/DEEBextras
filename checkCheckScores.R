@@ -2,6 +2,8 @@ library(tidyverse)
 scoreState <- read_csv("~/DEEBfromCluster/DeebDbLorenzTune/checkScores_2024-07-11-00-06-51-290371_4bfb5bbef27b.csv") #
 scoreState <- read_csv("~/DEEBfromCluster/DeebDbDystsNoisyTune/checkScores_2024-07-10-19-10-54-440301_923034e57e79.csv") #
 scoreState <- read_csv("~/DEEBfromCluster/DeebDbDystsNoisefreeTune/checkScores_2024-07-10-10-14-29-326058_8adb43837552.csv") #
+scoreState <- read_csv("~/DeebDbCluster/LorenzBig2Tune/_summary/checkScores_2024-11-02-09-17-01-197156_6a2d63f31f3a.csv") #
+scoreState <- scoreState |> filter(!str_detect(methodFile, "_time"))
 initMissing <-
   scoreState |>
   filter(initCheckMissing > 0, !str_detect(methodBaseFile, "NeuralOde"))

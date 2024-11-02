@@ -1,3 +1,5 @@
 model,methodFile,obs
 .,Linear_Poly2,.
 .,Linear_Poly4,.
+.,Linear_Poly6,.
+.,Linear_Poly8,.
