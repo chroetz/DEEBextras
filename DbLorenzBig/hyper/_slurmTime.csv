@@ -2,10 +2,10 @@ methodBaseFile,timeInMinutes,nCpus,gpu
 ConstLast,1440,1,FALSE
 ConstMean,1440,1,FALSE
 Analogue,1440,1,FALSE
-Esn_big_deriv,1440,1,FALSE
+Esn_big_deriv,1440,2,FALSE
 Esn_deriv,1440,1,FALSE
 Esn_deriv_time,1440,1,FALSE
-Esn_big_state,1440,1,FALSE
+Esn_big_state,1440,2,FALSE
 Esn_state,1440,1,FALSE
 Esn_state_time,1440,1,FALSE
 Gp-Gp-interp,1440,1,FALSE
@@ -37,10 +37,10 @@ NeuralOde200,1440,4,FALSE
 NeuralOde500,1440,4,FALSE
 NeuralOde1000,1440,4,FALSE
 PwLin-Nn,1440,1,FALSE
-RandomFeatures_big_deriv,1440,1,FALSE
+RandomFeatures_big_deriv,1440,2,FALSE
 RandomFeatures_deriv,1440,1,FALSE
 RandomFeatures_deriv_time,1440,1,FALSE
-RandomFeatures_big_state,1440,1,FALSE
+RandomFeatures_big_state,1440,2,FALSE
 RandomFeatures_state,1440,1,FALSE
 RandomFeatures_state_time,1440,1,FALSE
 Spline-Gp,1440,1,FALSE
