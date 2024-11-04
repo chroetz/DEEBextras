@@ -8,7 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "size": 4000,
+      "size": 1000,
       "degree": 0,
       "spectralRadius": 0,
       "inWeightScale": {
