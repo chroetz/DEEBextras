@@ -8,7 +8,7 @@
       "initialState": {
         "_class": ["FromObs", "InitialState", "Opts"]
       },
-      "size": 100,
+      "size": 400,
       "inWeightScale": {
         "_class": "expansion",
         "values": [0.025, 0.1, 0.4],
