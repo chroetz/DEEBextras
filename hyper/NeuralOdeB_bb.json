@@ -1,0 +1,93 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["NeuralOde", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "outTimeStep": null,
+      "nOutSteps": 1000,
+      "deebNeuralOdeProjectPath": "~/DEEB_jl",
+      "seed": 1,
+      "hiddenLayers":  2,
+      "hiddenWidth": 32,
+      "activation": "swish",
+      "steps": {
+        "_class": "expansion",
+        "values": [1],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 64,
+          "min": 1
+        }
+      },
+      "device": "cuda",
+      "batchsize": 1024,
+      "weightDecay": 0,
+      "epochs": 400,
+      "learningRateSchedule": "const_medium"
+    },
+    {
+      "_class": ["NeuralOde", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "outTimeStep": null,
+      "nOutSteps": 1000,
+      "deebNeuralOdeProjectPath": "~/DEEB_jl",
+      "seed": 1,
+      "hiddenLayers":  4,
+      "hiddenWidth": 32,
+      "activation": "swish",
+      "steps": {
+        "_class": "expansion",
+        "values": [1],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 64,
+          "min": 1
+        }
+      },
+      "device": "cuda",
+      "batchsize": 1024,
+      "weightDecay": 0,
+      "epochs": 400,
+      "learningRateSchedule": "const_medium"
+    },
+    {
+      "_class": ["NeuralOde", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "outTimeStep": null,
+      "nOutSteps": 1000,
+      "deebNeuralOdeProjectPath": "~/DEEB_jl",
+      "seed": 1,
+      "hiddenLayers":  2,
+      "hiddenWidth": 128,
+      "activation": "swish",
+      "steps": {
+        "_class": "expansion",
+        "values": [1],
+        "generate": {
+          "kind": "multiply",
+          "value": 2,
+          "max": 64,
+          "min": 1
+        }
+      },
+      "device": "cuda",
+      "batchsize": 1024,
+      "weightDecay": 0,
+      "epochs": 400,
+      "learningRateSchedule": "const_medium"
+    }
+  ]
+}

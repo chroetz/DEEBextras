@@ -1,0 +1,20 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["Linear", "Propagator", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "pastSteps": 0,
+      "polyDeg": 7,
+      "l2Penalty": 0,
+      "skip": 0,
+      "timeStepAsInput": false,
+      "derivOrder": 1,
+      "targetType": "deriv"
+    }
+  ]
+}

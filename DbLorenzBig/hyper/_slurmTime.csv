@@ -18,9 +18,13 @@ Linear_deriv,1440,2,FALSE
 Linear_deriv_time,1440,2,FALSE
 Linear_state,1440,2,FALSE
 Linear_state_time,1440,2,FALSE
+Linear_Poly1,1440,2,FALSE
 Linear_Poly2,1440,2,FALSE
+Linear_Poly3,1440,2,FALSE
 Linear_Poly4,1440,2,FALSE
+Linear_Poly5,1440,2,FALSE
 Linear_Poly6,1440,2,FALSE
+Linear_Poly7,1440,2,FALSE
 Linear_Poly8,1440,2,FALSE
 Ll-Nn,1440,2,FALSE
 LocalLinearPropa_deriv,1440,2,FALSE
@@ -37,6 +41,7 @@ NeuralOde200,1440,4,FALSE
 NeuralOde500,1440,4,FALSE
 NeuralOde1000,1440,4,FALSE
 NeuralOdeB,1440,4,FALSE
+NeuralOdeB_bb,1440,4,TRUE
 NeuralOdeTestCpu,1440,1,FALSE
 NeuralOdeTestGpu,1440,1,TRUE
 PwLin-Nn,1440,2,FALSE
@@ -50,8 +55,14 @@ RandomFeatures_state_time,1440,2,FALSE
 Spline-Gp,1440,2,FALSE
 Spline-Nn,1440,2,FALSE
 Spline-Poly,1440,2,FALSE
+Spline-Poly1,1440,2,FALSE
 Spline-Poly2,1440,2,FALSE
+Spline-Poly3,1440,2,FALSE
 Spline-Poly4,1440,2,FALSE
+Spline-Poly5,1440,2,FALSE
+Spline-Poly6,1440,2,FALSE
+Spline-Poly7,1440,2,FALSE
+Spline-Poly8,1440,2,FALSE
 Spline-ThreshLm,1440,2,FALSE
 Spline-ThreshLmRotate,1440,2,FALSE
 Transformer,1440,4,FALSE
