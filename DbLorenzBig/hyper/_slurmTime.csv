@@ -36,6 +36,7 @@ NeuralNetPropa_state_bb,1440,2,TRUE
 NeuralOde200,1440,4,FALSE
 NeuralOde500,1440,4,FALSE
 NeuralOde1000,1440,4,FALSE
+NeuralOdeB,1440,4,FALSE
 NeuralOdeTestCpu,1440,1,FALSE
 NeuralOdeTestGpu,1440,1,TRUE
 PwLin-Nn,1440,2,FALSE
