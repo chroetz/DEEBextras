@@ -17,12 +17,12 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cpu",
@@ -46,12 +46,12 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cpu",
@@ -75,12 +75,12 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cpu",
