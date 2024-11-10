@@ -30,6 +30,7 @@ NeuralNetPropa_state_time,1440,2
 NeuralOde200,1440,4
 NeuralOde500,1440,4
 NeuralOde1000,1440,4
+NeuralOdeB,1440,4
 PwLin-Nn,1440,1
 RandomFeatures_deriv,1440,1
 RandomFeatures_deriv_time,1440,1
