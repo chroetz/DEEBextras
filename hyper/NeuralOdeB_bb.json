@@ -17,7 +17,7 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
@@ -46,7 +46,7 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
@@ -75,7 +75,7 @@
       "activation": "swish",
       "steps": {
         "_class": "expansion",
-        "values": [1],
+        "values": [2,4],
         "generate": {
           "kind": "multiply",
           "value": 2,
