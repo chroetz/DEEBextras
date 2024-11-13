@@ -22,7 +22,7 @@
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cuda",
@@ -51,7 +51,7 @@
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cuda",
@@ -80,7 +80,7 @@
           "kind": "multiply",
           "value": 2,
           "max": 64,
-          "min": 1
+          "min": 2
         }
       },
       "device": "cuda",
