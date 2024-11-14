@@ -16,8 +16,14 @@ Linear_deriv,1440,1
 Linear_deriv_time,1440,1
 Linear_state,1440,1
 Linear_state_time,1440,1
+Linear_Poly1,1440,1
 Linear_Poly2,1440,1
+Linear_Poly3,1440,1
 Linear_Poly4,1440,1
+Linear_Poly5,1440,1
+Linear_Poly6,1440,1
+Linear_Poly7,1440,1
+Linear_Poly8,1440,1
 Ll-Nn,1440,1
 LocalLinearPropa_deriv,1440,1
 LocalLinearPropa_deriv_time,1440,1
