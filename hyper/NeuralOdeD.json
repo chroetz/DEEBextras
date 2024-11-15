@@ -1,0 +1,41 @@
+{
+  "_class": ["HyperParms", "List", "Opts"],
+  "name": "",
+  "list": [
+    {
+      "_class": ["NeuralOde", "HyperParms", "Opts"],
+      "normalize": "meanAndCov",
+      "initialState": {
+        "_class": ["FromObs", "InitialState", "Opts"]
+      },
+      "outTimeStep": null,
+      "nOutSteps": 1000,
+      "deebNeuralOdeProjectPath": "~/DEEB_jl",
+      "seed": 1,
+      "hiddenLayers": {
+        "_class": "expansion",
+        "values": [2,3,4]
+      },
+      "hiddenWidth": {
+        "_class": "expansion",
+        "values": [256,512,1024]
+      },
+      "activation": {
+        "_class": "expansion",
+        "values": ["swish", "relu", "gelu"]
+      },
+      "steps": {
+        "_class": "expansion",
+        "values": [2,4,8,16]
+      },
+      "device": "cpu",
+      "batchsize": 32,
+      "weightDecay": {
+        "_class": "expansion",
+        "values": [1e-4, 1e-5, 1e-6]
+      },
+      "epochs": 400,
+      "learningRateSchedule": "const_medium"
+    }
+  ]
+}
