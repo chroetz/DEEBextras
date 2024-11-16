@@ -46,6 +46,7 @@ NeuralOdeC,1440,4,FALSE
 NeuralOdeC_bb,1440,4,TRUE
 NeuralOdeD,1440,4,FALSE
 NeuralOdeD_bb,1440,4,TRUE
+NeuralOdeE,1440,4,FALSE
 NeuralOdeTestCpu,1440,1,FALSE
 NeuralOdeTestGpu,1440,1,TRUE
 PwLin-Nn,1440,2,FALSE
