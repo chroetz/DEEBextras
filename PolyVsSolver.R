@@ -18,7 +18,7 @@ if (length(args > 0)) eval(parse(text = paste(args, collapse=";"))) # evaluate c
 
 
 set.seed(seed)
-
+EPS <- 1e-13
 
 # HELPER FUNCTIONS
 
@@ -59,7 +59,7 @@ results <- replicate(nReps, {
   timeRange <- c(-nWarmup*sampleDt, (nObs+nTest-1)*sampleDt)
   traj <- getL63(u0, timeRange, solveDt)
   sampledTraj <- traj[seq(1, nrow(traj), by=sampleDt/solveDt), ]
-  sampledTraj <- sampledTraj[sampledTraj[,1] >= 0, ]
+  sampledTraj <- sampledTraj[sampledTraj[,1] >= 0-EPS, ]
   stopifnot(nrow(sampledTraj) == nObs + nTest)
   obsTraj <- signif(sampledTraj[1:nObs, ], digits = digits)
   testTraj <- sampledTraj[nObs+(1:nTest), ]
@@ -73,10 +73,10 @@ results <- replicate(nReps, {
   timeRangeSolver <- range(obsTraj[nrow(obsTraj), 1], c(testTraj[, 1]))
   trajEsti <- getL63(initCond, timeRangeSolver, solveDt)
   sampledTrajEsti  <- trajEsti[seq(1, nrow(trajEsti), by=sampleDt/solveDt), ]
-  sampledTrajEsti <- sampledTrajEsti[sampledTrajEsti[,1] >= testTraj[1, 1], ]
+  sampledTrajEsti <- sampledTrajEsti[sampledTrajEsti[,1] >= testTraj[1, 1]-EPS, ]
   stopifnot(nrow(sampledTrajEsti) == nTest)
 
-  stopifnot(all(abs(sampledTrajEsti[, 1] - testTraj[, 1]) < 1e-13))
+  stopifnot(all(abs(sampledTrajEsti[, 1] - testTraj[, 1]) < EPS))
   solverError <- sqrt(rowSums((sampledTrajEsti[, -1] - testTraj[, -1])^2))
 
 
@@ -160,7 +160,7 @@ x <- data$results[,"time",1]
 pdf(paste0(fileNameBase, ".pdf"), width = 6, height = 4)
 plot(
   NA,
-  xlim = range(x), ylim = range(meanResults),
+  xlim = range(x), ylim = range(resultsQuantiles),
   log="y",
   xlab="Time", ylab="Median Error",
   main = sprintf("Significant Digits: %d, Polynomial Degree: %d", digits, polyDeg))
