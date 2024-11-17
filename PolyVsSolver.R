@@ -54,7 +54,7 @@ results <- replicate(nReps, {
 
   # CREATE DATA
 
-  nWarup <- sample(nWarmupRange[1]:nWarmupRange[2], 1)
+  nWarmup <- sample(nWarmupRange[1]:nWarmupRange[2], 1)
   u0 <- sampleInitCond()
   timeRange <- c(-nWarmup*sampleDt, (nObs+nTest-1)*sampleDt)
   traj <- getL63(u0, timeRange, solveDt)
@@ -137,7 +137,7 @@ saveRDS(
     seed,
     solveDt,
     sampleDt,
-    nWarmup,
+    nWarmupRange,
     sampleInitCond,
     nReps,
     nObs,
