@@ -2,7 +2,7 @@ cme <- function(target, follower) {
   n <- nrow(target)
   meanState <- colMeans(target)
   targetStateDemeaned <- target - rep(meanState, each = n)
-  scale <- sqrt(mean(rowSums(targetStateDemeaned)^2))
+  scale <- sqrt(mean(rowSums(targetStateDemeaned^2)))
   targeStateNormed <- targetStateDemeaned / scale
   followerStateNormed <- (follower - rep(meanState, each = n)) / scale
   err <- sqrt(rowSums((targeStateNormed - followerStateNormed)^2))
@@ -66,3 +66,7 @@ for (i in seq_along(obsFilePaths)) {
 
   cat("Finished obs file nr", i, "after", (proc.time()-ptObs)[3],"s\n")
 }
+
+cat(sprintf("mean CME of solver: %e\n", mean(cmeValues)))
+
+# TODO add to DEEB as method

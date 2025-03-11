@@ -7,7 +7,7 @@ cme <- function(follower, target, bound=1) {
   n <- nrow(target)
   meanState <- colMeans(target)
   targetStateDemeaned <- target - rep(meanState, each = n)
-  scale <- sqrt(mean(rowSums(targetStateDemeaned)^2))
+  scale <- sqrt(mean(rowSums(targetStateDemeaned^2)))
   targeStateNormed <- targetStateDemeaned / scale
   followerStateNormed <- (follower - rep(meanState, each = n)) / scale
   err <- sqrt(rowSums((targeStateNormed - followerStateNormed)^2))
